@@ -112,6 +112,19 @@ Claude 등에 붙여넣을 때는 `data/contents.json` 주소 하나면 됩니�
 - 컬럼 정렬(제목·플랫폼·카테고리·게시일·조회수·공감·댓글)
 - 원문 링크, 복사 버튼이 달린 데이터 URL(JSON/CSV)
 
+## 배포 (GitHub Pages)
+
+- 저장소: <https://github.com/allinoneenc-oss/naver-content-tracket>
+- 사이트: <https://allinoneenc-oss.github.io/naver-content-tracket/>
+- Pages 는 **`gh-pages` 브랜치 루트(`/`)** 에서 배포됩니다. (Pickle 의 GitHub 연결 권한으로는 Pages 설정 API 의 소스 변경이 403 으로 막혀, `gh-pages` 브랜치 푸시로 Pages 가 켜진 상태입니다. 소스를 `main` 으로 바꾸려면 저장소 Settings → Pages 에서 직접 변경하면 됩니다.)
+- 내용을 갱신할 때는 두 브랜치를 함께 올려 주세요:
+
+```bash
+git add -A && git commit -m "update"
+git push origin main
+git push origin main:gh-pages
+```
+
 ## 로컬 실행
 
 ```bash
