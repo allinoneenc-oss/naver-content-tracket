@@ -1,0 +1,480 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>올인원 이엔씨 · 10~11월 콘텐츠 대시보드</title>
+<meta name="description" content="네이버 블로그·클립 2026년 10~11월 콘텐츠 성과 대시보드" />
+<style>
+  :root{
+    --bg:#f4f6f8;
+    --card:#ffffff;
+    --ink:#111827;
+    --ink-2:#4b5563;
+    --ink-3:#8b95a1;
+    --line:#e5e8ec;
+    --brand:#0f766e;
+    --brand-soft:#e6f4f1;
+    --blog:#2563eb;
+    --blog-soft:#e8efff;
+    --clip:#c2410c;
+    --clip-soft:#fdeee6;
+    --radius:16px;
+    --shadow:0 1px 2px rgba(16,24,40,.04), 0 8px 24px rgba(16,24,40,.06);
+  }
+  *{box-sizing:border-box}
+  html,body{margin:0;padding:0}
+  body{
+    background:var(--bg);
+    color:var(--ink);
+    font-family:-apple-system,BlinkMacSystemFont,"Apple SD Gothic Neo","Pretendard","Malgun Gothic","Noto Sans KR",Roboto,sans-serif;
+    -webkit-font-smoothing:antialiased;
+    line-height:1.5;
+    font-size:15px;
+  }
+  .wrap{max-width:1200px;margin:0 auto;padding:0 20px 64px}
+  header.top{
+    background:linear-gradient(135deg,#0f3d3a 0%, #0f766e 55%, #157f74 100%);
+    color:#fff;
+    padding:34px 0 74px;
+    margin-bottom:-46px;
+  }
+  header.top .wrap{padding-bottom:0}
+  .eyebrow{font-size:13px;letter-spacing:.08em;text-transform:uppercase;opacity:.8;font-weight:600}
+  h1{margin:8px 0 6px;font-size:27px;line-height:1.3;letter-spacing:-.02em;font-weight:700}
+  .sub{opacity:.9;font-size:14px}
+  .sub strong{font-weight:600}
+  .sub .dot{margin:0 8px;opacity:.5}
+
+  .kpis{display:grid;grid-template-columns:repeat(4,1fr);gap:14px}
+  .kpi{
+    background:var(--card);border-radius:var(--radius);padding:18px 20px;box-shadow:var(--shadow);
+    border:1px solid rgba(255,255,255,.6);
+  }
+  .kpi .label{font-size:12.5px;color:var(--ink-3);font-weight:600;letter-spacing:.01em}
+  .kpi .value{font-size:28px;font-weight:700;letter-spacing:-.03em;margin-top:6px;font-variant-numeric:tabular-nums}
+  .kpi .value small{font-size:14px;font-weight:600;color:var(--ink-3);margin-left:3px}
+  .kpi .foot{margin-top:8px;font-size:12.5px;color:var(--ink-2);display:flex;gap:6px;flex-wrap:wrap}
+  .tag{display:inline-flex;align-items:center;gap:5px;padding:2px 8px;border-radius:999px;font-size:11.5px;font-weight:600}
+  .tag.blog{background:var(--blog-soft);color:var(--blog)}
+  .tag.clip{background:var(--clip-soft);color:var(--clip)}
+
+  .panel{background:var(--card);border-radius:var(--radius);box-shadow:var(--shadow);padding:22px 24px;margin-top:20px;border:1px solid var(--line)}
+  .panel h2{margin:0 0 4px;font-size:16px;letter-spacing:-.01em}
+  .panel .hint{color:var(--ink-3);font-size:13px;margin:0 0 16px}
+
+  .toolbar{display:flex;gap:18px;flex-wrap:wrap;align-items:center;justify-content:space-between}
+  .groups{display:flex;gap:22px;flex-wrap:wrap;align-items:center}
+  .group{display:flex;align-items:center;gap:8px}
+  .group .glabel{font-size:12.5px;color:var(--ink-3);font-weight:600}
+  .chips{display:flex;gap:6px;background:#f1f3f6;padding:3px;border-radius:999px}
+  .chip{border:0;background:transparent;padding:7px 14px;border-radius:999px;font:inherit;font-size:13px;font-weight:600;color:var(--ink-2);cursor:pointer;white-space:nowrap}
+  .chip:hover{color:var(--ink)}
+  .chip.active{background:#fff;color:var(--brand);box-shadow:0 1px 2px rgba(16,24,40,.12)}
+  .search{position:relative;flex:1 1 240px;max-width:320px}
+  .search input{
+    width:100%;padding:10px 14px 10px 36px;border:1px solid var(--line);border-radius:10px;
+    font:inherit;font-size:14px;background:#fbfcfd;color:var(--ink)
+  }
+  .search input:focus{outline:2px solid var(--brand-soft);border-color:var(--brand);background:#fff}
+  .search svg{position:absolute;left:11px;top:50%;transform:translateY(-50%);opacity:.45}
+
+  .charts{display:grid;grid-template-columns:1fr 1fr;gap:20px}
+  .bars{margin-top:8px}
+  .barrow{display:grid;grid-template-columns:74px 1fr 62px;align-items:center;gap:10px;margin:10px 0;font-size:13px}
+  .barrow .bl{color:var(--ink-2);font-weight:600;white-space:nowrap}
+  .bar{height:14px;border-radius:7px;background:#eef1f4;overflow:hidden}
+  .bar span{display:block;height:100%;border-radius:7px;background:var(--brand);transition:width .5s ease}
+  .bar span.blog{background:linear-gradient(90deg,#2563eb,#3b82f6)}
+  .bar span.clip{background:linear-gradient(90deg,#c2410c,#f97316)}
+  .barrow .bv{text-align:right;color:var(--ink-2);font-variant-numeric:tabular-nums;font-weight:600}
+
+  .tablewrap{overflow-x:auto;margin:0 -6px}
+  table{border-collapse:collapse;width:100%;font-size:14px;min-width:860px}
+  thead th{
+    text-align:left;font-size:12.5px;color:var(--ink-3);font-weight:600;letter-spacing:.02em;
+    padding:10px 12px;border-bottom:1px solid var(--line);white-space:nowrap;
+  }
+  thead th.sortable{cursor:pointer;user-select:none}
+  thead th.sortable:hover{color:var(--ink)}
+  thead th .arrow{opacity:.35;font-size:10px;margin-left:4px}
+  thead th.sorted{color:var(--brand)}
+  thead th.sorted .arrow{opacity:1}
+  tbody td{padding:13px 12px;border-bottom:1px solid #f0f2f5;vertical-align:top}
+  tbody tr:hover{background:#fafbfc}
+  tbody tr:last-child td{border-bottom:0}
+  .t-title a{color:var(--ink);text-decoration:none;font-weight:600;letter-spacing:-.01em}
+  .t-title a:hover{color:var(--brand);text-decoration:underline}
+  .t-sub{color:var(--ink-3);font-size:12.5px;margin-top:3px;display:-webkit-box;-webkit-line-clamp:1;-webkit-box-orient:vertical;overflow:hidden;max-width:520px}
+  .num{text-align:right;font-variant-numeric:tabular-nums;white-space:nowrap;font-weight:600;color:var(--ink-2)}
+  .date{white-space:nowrap;color:var(--ink-2);font-variant-numeric:tabular-nums}
+  .cat{font-size:12.5px;color:var(--ink-2);background:#f3f5f7;padding:2px 8px;border-radius:6px;display:inline-block;white-space:nowrap;max-width:170px;overflow:hidden;text-overflow:ellipsis}
+  .empty{padding:36px;text-align:center;color:var(--ink-3)}
+
+  .links{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin-top:6px}
+  .linkbox{border:1px solid var(--line);border-radius:12px;padding:14px 16px;background:#fbfcfd}
+  .linkbox .lb-title{font-size:13px;font-weight:700;margin-bottom:2px}
+  .linkbox .lb-desc{font-size:12.5px;color:var(--ink-3);margin-bottom:10px}
+  .urlrow{display:flex;gap:8px}
+  .urlrow input{
+    flex:1;min-width:0;padding:9px 11px;border:1px solid var(--line);border-radius:8px;
+    font-family:ui-monospace,SFMono-Regular,Menlo,monospace;font-size:12px;color:var(--ink-2);background:#fff
+  }
+  .copy{
+    border:0;background:var(--brand);color:#fff;font:inherit;font-size:13px;font-weight:600;
+    padding:9px 14px;border-radius:8px;cursor:pointer;white-space:nowrap
+  }
+  .copy:hover{background:#0b5f59}
+  .copy.done{background:#10b981}
+  a.raw{font-size:12.5px;color:var(--brand);text-decoration:none;font-weight:600}
+  a.raw:hover{text-decoration:underline}
+
+  footer{margin-top:26px;color:var(--ink-3);font-size:12.5px}
+  footer ul{margin:8px 0 0;padding-left:18px}
+  footer li{margin:3px 0}
+  .status{font-size:13px;color:var(--ink-2)}
+  .err{background:#fff7ed;border:1px solid #fed7aa;color:#9a3412;padding:14px 16px;border-radius:12px;font-size:13.5px}
+
+  @media (max-width:900px){
+    .kpis{grid-template-columns:repeat(2,1fr)}
+    .charts{grid-template-columns:1fr}
+    .links{grid-template-columns:1fr}
+    h1{font-size:22px}
+  }
+  @media (max-width:560px){
+    .wrap{padding:0 14px 48px}
+    .panel{padding:18px 16px}
+    .kpi .value{font-size:23px}
+  }
+</style>
+</head>
+<body>
+<header class="top">
+  <div class="wrap">
+    <div class="eyebrow">ALL IN ONE E&amp;C · CONTENT REPORT</div>
+    <h1>올인원 이엔씨 10~11월 콘텐츠 성과</h1>
+    <div class="sub">
+      <strong>네이버 블로그</strong> @kyk123146 <span class="dot">·</span>
+      <strong>네이버 클립</strong> @allinone_enc <span class="dot">·</span>
+      2026-10-01 ~ 2026-11-26
+    </div>
+  </div>
+</header>
+
+<div class="wrap">
+  <section class="kpis">
+    <div class="kpi">
+      <div class="label">전체 콘텐츠</div>
+      <div class="value" id="k-count">–<small>건</small></div>
+      <div class="foot" id="k-count-foot"></div>
+    </div>
+    <div class="kpi">
+      <div class="label">총 조회수</div>
+      <div class="value" id="k-views">–</div>
+      <div class="foot" id="k-views-foot"></div>
+    </div>
+    <div class="kpi">
+      <div class="label">총 공감 · 좋아요</div>
+      <div class="value" id="k-likes">–</div>
+      <div class="foot" id="k-likes-foot"></div>
+    </div>
+    <div class="kpi">
+      <div class="label">총 댓글</div>
+      <div class="value" id="k-comments">–</div>
+      <div class="foot" id="k-comments-foot"></div>
+    </div>
+  </section>
+
+  <section class="panel charts">
+    <div>
+      <h2>월별 조회수</h2>
+      <p class="hint">게시월 기준 누적 조회수</p>
+      <div class="bars" id="chart-month"></div>
+    </div>
+    <div>
+      <h2>플랫폼별 반응</h2>
+      <p class="hint">블로그 vs 클립 · 조회수 / 공감·좋아요</p>
+      <div class="bars" id="chart-platform"></div>
+    </div>
+  </section>
+
+  <section class="panel">
+    <div class="toolbar">
+      <div class="groups">
+        <div class="group">
+          <span class="glabel">플랫폼</span>
+          <div class="chips" id="f-platform">
+            <button class="chip active" data-value="all">전체</button>
+            <button class="chip" data-value="blog">블로그</button>
+            <button class="chip" data-value="clip">클립</button>
+          </div>
+        </div>
+        <div class="group">
+          <span class="glabel">게시월</span>
+          <div class="chips" id="f-month">
+            <button class="chip active" data-value="all">전체</button>
+            <button class="chip" data-value="2026-10">10월</button>
+            <button class="chip" data-value="2026-11">11월</button>
+          </div>
+        </div>
+      </div>
+      <div class="search">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="7"/><path d="M20 20l-3.5-3.5"/></svg>
+        <input id="search" type="search" placeholder="제목 · 본문 · 카테고리 검색" autocomplete="off" />
+      </div>
+    </div>
+
+    <div style="display:flex;justify-content:space-between;align-items:baseline;margin:18px 0 6px">
+      <h2>콘텐츠 목록</h2>
+      <span class="status" id="count-line">불러오는 중…</span>
+    </div>
+    <div id="table-area"><div class="empty">데이터를 불러오는 중입니다…</div></div>
+  </section>
+
+  <section class="panel">
+    <h2>Claude · 스프레드시트에서 바로 쓰는 데이터</h2>
+    <p class="hint">아래 주소를 복사해 붙여넣으면 전체 데이터를 바로 읽을 수 있습니다.</p>
+    <div class="links">
+      <div class="linkbox">
+        <div class="lb-title">contents.json</div>
+        <div class="lb-desc">전체 15건 · 메타데이터 + 요약 포함 (JSON)</div>
+        <div class="urlrow">
+          <input id="url-json" readonly />
+          <button class="copy" data-target="url-json">복사</button>
+        </div>
+        <div style="margin-top:8px"><a class="raw" id="open-json" href="data/contents.json" target="_blank" rel="noopener">새 탭에서 열기 ↗</a></div>
+      </div>
+      <div class="linkbox">
+        <div class="lb-title">contents.csv</div>
+        <div class="lb-desc">엑셀·구글시트용 · UTF-8(BOM) (CSV)</div>
+        <div class="urlrow">
+          <input id="url-csv" readonly />
+          <button class="copy" data-target="url-csv">복사</button>
+        </div>
+        <div style="margin-top:8px"><a class="raw" id="open-csv" href="data/contents.csv" target="_blank" rel="noopener">새 탭에서 열기 ↗</a></div>
+      </div>
+      <div class="linkbox">
+        <div class="lb-title">blog.json</div>
+        <div class="lb-desc">네이버 블로그 7건만 (JSON)</div>
+        <div class="urlrow">
+          <input id="url-blog" readonly />
+          <button class="copy" data-target="url-blog">복사</button>
+        </div>
+      </div>
+      <div class="linkbox">
+        <div class="lb-title">clips.json</div>
+        <div class="lb-desc">네이버 클립 8건만 (JSON)</div>
+        <div class="urlrow">
+          <input id="url-clips" readonly />
+          <button class="copy" data-target="url-clips">복사</button>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <div><strong>수집 시점</strong> <span id="collected">–</span> · 네이버 블로그 관리자 통계 및 공개 프로필 기준</div>
+    <ul id="notes"></ul>
+  </footer>
+</div>
+
+<script>
+(function(){
+  const state = { platform:'all', month:'all', q:'', sortKey:'published_at', sortDir:-1, data:null };
+
+  const fmt = n => (n===null||n===undefined||isNaN(n)) ? '–' : Number(n).toLocaleString('ko-KR');
+  const esc = s => String(s==null?'':s).replace(/[&<>"']/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
+
+  function setChips(id, key){
+    document.querySelectorAll('#'+id+' .chip').forEach(btn=>{
+      btn.addEventListener('click', ()=>{
+        document.querySelectorAll('#'+id+' .chip').forEach(b=>b.classList.remove('active'));
+        btn.classList.add('active');
+        state[key] = btn.dataset.value;
+        render();
+      });
+    });
+  }
+
+  function filtered(){
+    const q = state.q.trim().toLowerCase();
+    return state.data.items.filter(it=>{
+      if(state.platform!=='all' && it.platform!==state.platform) return false;
+      if(state.month!=='all' && (it.published_at||'').slice(0,7)!==state.month) return false;
+      if(q){
+        const hay = [it.title,it.content,it.category,it.id].join(' ').toLowerCase();
+        if(!hay.includes(q)) return false;
+      }
+      return true;
+    });
+  }
+
+  function sortItems(rows){
+    const k = state.sortKey, d = state.sortDir;
+    return rows.slice().sort((a,b)=>{
+      let av = a[k], bv = b[k];
+      if(k==='platform'){ av = av==='blog'?0:1; bv = bv==='blog'?0:1; }
+      if(typeof av === 'string' || typeof bv === 'string'){
+        av = String(av||''); bv = String(bv||'');
+        return av.localeCompare(bv,'ko') * d;
+      }
+      return ((av||0)-(bv||0)) * d;
+    });
+  }
+
+  function renderKpis(){
+    const s = state.data.summary;
+    document.getElementById('k-count').innerHTML = fmt(s.total.count)+'<small>건</small>';
+    document.getElementById('k-count-foot').innerHTML =
+      `<span class="tag blog">블로그 ${s.by_platform.blog.count}</span><span class="tag clip">클립 ${s.by_platform.clip.count}</span>`;
+    document.getElementById('k-views').textContent = fmt(s.total.views);
+    document.getElementById('k-views-foot').innerHTML =
+      `<span>블로그 ${fmt(s.by_platform.blog.views)}</span><span style="color:#d1d5db">|</span><span>클립 ${fmt(s.by_platform.clip.views)}</span>`;
+    document.getElementById('k-likes').textContent = fmt(s.total.likes);
+    document.getElementById('k-likes-foot').innerHTML =
+      `<span>블로그 ${fmt(s.by_platform.blog.likes)}</span><span style="color:#d1d5db">|</span><span>클립 ${fmt(s.by_platform.clip.likes)}</span>`;
+    document.getElementById('k-comments').textContent = fmt(s.total.comments);
+    document.getElementById('k-comments-foot').innerHTML =
+      `<span>블로그 ${fmt(s.by_platform.blog.comments)}</span><span style="color:#d1d5db">|</span><span>클립 ${fmt(s.by_platform.clip.comments)}</span>`;
+  }
+
+  function bars(el, rows){
+    const max = Math.max(1, ...rows.map(r=>r.value));
+    el.innerHTML = rows.map(r=>`
+      <div class="barrow">
+        <div class="bl">${esc(r.label)}</div>
+        <div class="bar"><span class="${r.cls||''}" style="width:${Math.round(r.value/max*100)}%"></span></div>
+        <div class="bv">${fmt(r.value)}</div>
+      </div>`).join('');
+  }
+
+  function renderCharts(){
+    const s = state.data.summary;
+    bars(document.getElementById('chart-month'), [
+      {label:'10월', value:s.by_month['2026-10'].views},
+      {label:'11월', value:s.by_month['2026-11'].views}
+    ]);
+    bars(document.getElementById('chart-platform'), [
+      {label:'블로그 조회', value:s.by_platform.blog.views, cls:'blog'},
+      {label:'클립 조회', value:s.by_platform.clip.views, cls:'clip'},
+      {label:'블로그 공감', value:s.by_platform.blog.likes, cls:'blog'},
+      {label:'클립 좋아요', value:s.by_platform.clip.likes, cls:'clip'}
+    ]);
+  }
+
+  const COLS = [
+    {key:'title', label:'제목', cls:''},
+    {key:'platform', label:'플랫폼', cls:''},
+    {key:'category', label:'카테고리', cls:''},
+    {key:'published_at', label:'게시일', cls:''},
+    {key:'views', label:'조회수', cls:'num'},
+    {key:'likes', label:'공감', cls:'num'},
+    {key:'comments', label:'댓글', cls:'num'}
+  ];
+
+  function renderTable(){
+    const rows = sortItems(filtered());
+    document.getElementById('count-line').textContent = `${rows.length}건 표시 / 전체 ${state.data.items.length}건`;
+    const area = document.getElementById('table-area');
+    if(!rows.length){ area.innerHTML = '<div class="empty">조건에 맞는 콘텐츠가 없습니다.</div>'; return; }
+
+    const head = COLS.map(c=>{
+      const sorted = state.sortKey===c.key;
+      return `<th class="sortable ${c.cls} ${sorted?'sorted':''}" data-key="${c.key}">${c.label}<span class="arrow">${sorted?(state.sortDir>0?'▲':'▼'):'↕'}</span></th>`;
+    }).join('');
+
+    const body = rows.map(it=>{
+      const badge = it.platform==='blog'
+        ? '<span class="tag blog">블로그</span>'
+        : '<span class="tag clip">클립</span>';
+      const dur = it.platform==='clip' && it.duration ? ` <span class="t-sub" style="display:inline">· ${esc(it.duration)}</span>` : '';
+      return `<tr>
+        <td class="t-title">
+          <a href="${esc(it.url)}" target="_blank" rel="noopener">${esc(it.title)}</a>
+          <div class="t-sub">${esc(it.content||'')}</div>
+        </td>
+        <td>${badge}</td>
+        <td><span class="cat" title="${esc(it.category)}">${esc(it.category)}</span>${dur}</td>
+        <td class="date">${esc(it.published_at)}</td>
+        <td class="num">${fmt(it.views)}</td>
+        <td class="num">${fmt(it.likes)}</td>
+        <td class="num">${fmt(it.comments)}</td>
+      </tr>`;
+    }).join('');
+
+    area.innerHTML = `<div class="tablewrap"><table>
+      <thead><tr>${head}</tr></thead><tbody>${body}</tbody></table></div>`;
+
+    area.querySelectorAll('th.sortable').forEach(th=>{
+      th.addEventListener('click', ()=>{
+        const k = th.dataset.key;
+        if(state.sortKey===k){ state.sortDir *= -1; }
+        else { state.sortKey = k; state.sortDir = (k==='views'||k==='likes'||k==='comments'||k==='published_at') ? -1 : 1; }
+        renderTable();
+      });
+    });
+  }
+
+  function fillLinks(){
+    const base = location.href.replace(/[^/]*(\?.*)?(#.*)?$/,'') ;
+    const abs = p => new URL(p, base).href;
+    const map = {
+      'url-json': abs('data/contents.json'),
+      'url-csv': abs('data/contents.csv'),
+      'url-blog': abs('data/blog.json'),
+      'url-clips': abs('data/clips.json')
+    };
+    Object.entries(map).forEach(([id,v])=>{
+      const el = document.getElementById(id);
+      if(el){ el.value = v; }
+    });
+    document.getElementById('open-json').href = map['url-json'];
+    document.getElementById('open-csv').href = map['url-csv'];
+    document.querySelectorAll('button.copy').forEach(btn=>{
+      btn.addEventListener('click', async ()=>{
+        const input = document.getElementById(btn.dataset.target);
+        const text = input.value;
+        try{
+          await navigator.clipboard.writeText(text);
+        }catch(e){
+          input.select(); input.setSelectionRange(0, text.length);
+          try{ document.execCommand('copy'); }catch(_){}
+        }
+        const old = btn.textContent;
+        btn.textContent = '복사됨'; btn.classList.add('done');
+        setTimeout(()=>{ btn.textContent = old; btn.classList.remove('done'); }, 1400);
+      });
+    });
+  }
+
+  function render(){
+    renderTable();
+  }
+
+  setChips('f-platform','platform');
+  setChips('f-month','month');
+  let t;
+  document.getElementById('search').addEventListener('input', e=>{
+    clearTimeout(t);
+    t = setTimeout(()=>{ state.q = e.target.value; renderTable(); }, 120);
+  });
+
+  fetch('data/contents.json', {cache:'no-store'})
+    .then(r=>{ if(!r.ok) throw new Error('HTTP '+r.status); return r.json(); })
+    .then(data=>{
+      state.data = data;
+      renderKpis(); renderCharts(); renderTable(); fillLinks();
+      document.getElementById('collected').textContent = (data.meta && data.meta.updated_at || data.updated_at || '').replace('T',' ').slice(0,16);
+      document.getElementById('notes').innerHTML = ((data.meta && data.meta.notes) || []).map(n=>`<li>${esc(n)}</li>`).join('');
+    })
+    .catch(err=>{
+      document.getElementById('table-area').innerHTML =
+        `<div class="err">데이터를 불러오지 못했습니다 (${esc(err.message)}).<br>
+        <code>data/contents.json</code> 경로에 파일이 있는지 확인해 주세요. 로컬 파일을 직접 열었다면 간단한 웹 서버로 열어야 합니다.<br>
+        예: <code>python3 -m http.server</code></div>`;
+      document.getElementById('count-line').textContent = '오류';
+    });
+})();
+</script>
+</body>
+</html>
