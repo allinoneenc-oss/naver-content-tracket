@@ -382,8 +382,7 @@
       const blog = bp.blog || {count:0}, clip = bp.clip || {count:0};
       const cls = a.account_id==='kyk123159' ? 'acct a159' : 'acct';
       return `<tr>
-        <td><span class="an">${esc(a.account_name)}</span><div class="as">블로그 @${esc(a.blog.id)} · 클립 ${esc(a.clip.handle)}</div></td>
-        <td class="n"><span class="tag ${cls}">계정</span></td>
+        <td><span class="an">${esc(a.account_name)}</span> <span class="tag ${cls}">${esc(a.account_id)}</span><div class="as">블로그 @${esc(a.blog.id)} · 클립 ${esc(a.clip.handle)}</div></td>
         <td class="n">${fmt(st.count)}<span class="as"> (블로그 ${fmt(blog.count)} / 클립 ${fmt(clip.count)})</span></td>
         <td class="n">${fmt(st.views)}</td>
         <td class="n">${fmt(st.likes)}</td>
@@ -392,9 +391,9 @@
     }).join('');
     const tot = s.total || {};
     document.getElementById('account-summary').innerHTML = `<table class="acct-table">
-      <thead><tr><th>계정</th><th class="n"></th><th class="n">콘텐츠</th><th class="n">조회수</th><th class="n">공감·좋아요</th><th class="n">댓글</th></tr></thead>
+      <thead><tr><th>계정</th><th class="n">콘텐츠</th><th class="n">조회수</th><th class="n">공감·좋아요</th><th class="n">댓글</th></tr></thead>
       <tbody>${rows}
-      <tr><td class="an">합계</td><td></td><td class="n">${fmt(tot.count)}</td><td class="n">${fmt(tot.views)}</td><td class="n">${fmt(tot.likes)}</td><td class="n">${fmt(tot.comments)}</td></tr></tbody></table>`;
+      <tr><td class="an">합계</td><td class="n">${fmt(tot.count)}</td><td class="n">${fmt(tot.views)}</td><td class="n">${fmt(tot.likes)}</td><td class="n">${fmt(tot.comments)}</td></tr></tbody></table>`;
   }
 
   function bars(el, rows){
