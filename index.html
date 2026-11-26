@@ -108,6 +108,7 @@
   .t-sub{color:var(--ink-3);font-size:12.5px;margin-top:3px;display:-webkit-box;-webkit-line-clamp:1;-webkit-box-orient:vertical;overflow:hidden;max-width:520px}
   .num{text-align:right;font-variant-numeric:tabular-nums;white-space:nowrap;font-weight:600;color:var(--ink-2)}
   .date{white-space:nowrap;color:var(--ink-2);font-variant-numeric:tabular-nums}
+  .dur{font-size:12px;color:var(--ink-3);margin-top:4px;font-variant-numeric:tabular-nums}
   .cat{font-size:12.5px;color:var(--ink-2);background:#f3f5f7;padding:2px 8px;border-radius:6px;display:inline-block;white-space:nowrap;max-width:170px;overflow:hidden;text-overflow:ellipsis}
   .empty{padding:36px;text-align:center;color:var(--ink-3)}
 
@@ -387,14 +388,14 @@
       const badge = it.platform==='blog'
         ? '<span class="tag blog">블로그</span>'
         : '<span class="tag clip">클립</span>';
-      const dur = it.platform==='clip' && it.duration ? ` <span class="t-sub" style="display:inline">· ${esc(it.duration)}</span>` : '';
+      const dur = it.platform==='clip' && it.duration ? `<div class="dur">${esc(it.duration)}</div>` : '';
       return `<tr>
         <td class="t-title">
           <a href="${esc(it.url)}" target="_blank" rel="noopener">${esc(it.title)}</a>
           <div class="t-sub">${esc(it.content||'')}</div>
         </td>
-        <td>${badge}</td>
-        <td><span class="cat" title="${esc(it.category)}">${esc(it.category)}</span>${dur}</td>
+        <td>${badge}${dur}</td>
+        <td><span class="cat" title="${esc(it.category)}">${esc(it.category)}</span></td>
         <td class="date">${esc(it.published_at)}</td>
         <td class="num">${fmt(it.views)}</td>
         <td class="num">${fmt(it.likes)}</td>
