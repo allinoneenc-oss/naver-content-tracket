@@ -1,11 +1,49 @@
 {
   "meta": {
-    "updated_at": "2026-11-26T15:30:00+09:00",
+    "updated_at": "2026-11-26T16:10:00+09:00",
     "period": {
       "start": "2026-10-01",
       "end": "2026-11-26",
       "label": "2026년 10월 ~ 11월"
     },
+    "accounts": [
+      {
+        "account_id": "kyk123146",
+        "account_name": "올인원 이엔씨",
+        "blog": {
+          "id": "kyk123146",
+          "name": "올인원 이엔씨",
+          "url": "https://blog.naver.com/kyk123146",
+          "total_posts_all_time": 869
+        },
+        "clip": {
+          "handle": "@allinone_enc",
+          "name": "올인원 이엔씨",
+          "url": "https://clip.naver.com/@allinone_enc?tab=all&filter=all",
+          "total_clips_all_time": 43,
+          "followers": 498,
+          "following": 676
+        }
+      },
+      {
+        "account_id": "kyk123159",
+        "account_name": "CFS KOREA",
+        "blog": {
+          "id": "kyk123159",
+          "name": "CFS KOREA (씨에프에스코리아)",
+          "url": "https://blog.naver.com/kyk123159",
+          "total_posts_all_time": 252
+        },
+        "clip": {
+          "handle": "cfs_korea_",
+          "name": "씨에프에스코리아",
+          "url": "https://clip.naver.com/@cfs_korea_?tab=all&filter=all",
+          "total_clips_all_time": 23,
+          "followers": 488,
+          "following": 468
+        }
+      }
+    ],
     "account": {
       "naver_id": "kyk123146",
       "blog": {
@@ -25,78 +63,146 @@
     },
     "summary": {
       "total": {
-        "count": 15,
-        "views": 642,
-        "likes": 189,
-        "comments": 49
+        "count": 13,
+        "views": 821,
+        "likes": 359,
+        "comments": 77
       },
-      "by_platform": {
-        "blog": {
+      "by_account": {
+        "kyk123146": {
           "count": 7,
           "views": 563,
           "likes": 173,
           "comments": 39
         },
-        "clip": {
-          "count": 8,
-          "views": 79,
-          "likes": 16,
-          "comments": 10
+        "kyk123159": {
+          "count": 6,
+          "views": 258,
+          "likes": 186,
+          "comments": 38
         }
       },
       "by_month": {
         "2026-10": {
+          "count": 6,
+          "views": 615,
+          "likes": 159,
+          "comments": 32
+        },
+        "2026-11": {
           "count": 7,
-          "views": 521,
-          "likes": 93,
-          "comments": 26
-        },
-        "2026-11": {
-          "count": 8,
-          "views": 121,
-          "likes": 96,
-          "comments": 23
-        }
-      },
-      "by_month_platform": {
-        "2026-10": {
-          "blog": {
-            "count": 3,
-            "views": 454,
-            "likes": 83,
-            "comments": 21
-          },
-          "clip": {
-            "count": 4,
-            "views": 67,
-            "likes": 10,
-            "comments": 5
-          }
-        },
-        "2026-11": {
-          "blog": {
-            "count": 4,
-            "views": 109,
-            "likes": 90,
-            "comments": 18
-          },
-          "clip": {
-            "count": 4,
-            "views": 12,
-            "likes": 6,
-            "comments": 5
-          }
+          "views": 206,
+          "likes": 200,
+          "comments": 45
         }
       }
     },
-    "schema_version": "1.0",
+    "schema_version": "2.0",
     "notes": [
-      "조회수·공감은 수집 시점(2026-11-26 15:30 KST) 기준 값입니다.",
-      "블로그 조회수는 네이버 블로그 글 목록에 표시되는 값, 댓글수는 글 목록의 (댓글 수) 값입니다.",
-      "블로그 공감수는 포스트 페이지의 공감 수를 확인했으며, 10월 게시글은 포스트 페이지에 값이 표시되지 않아 관리자 통계 '공감수 순위'(2026.10 월간 + 11월 주간 합산)로 산출했습니다.",
+      "조회수·공감은 수집 시점(2026-11-26 16:10 KST) 기준 값입니다.",
+      "블로그 조회수·공감수·댓글수: 올인원 이엔씨(kyk123146) 글은 글 목록 조회수·포스트 페이지 공감·관리자 통계 '공감수 순위', CFS KOREA(kyk123159) 글은 글별 통계 페이지(blog.stat.naver.com/blog/article/{logNo}/cv)의 누적값으로 확인했습니다.",
+      "CFS KOREA 블로그 글은 10~11월에 6건(10-19 / 10-21 / 10-30 / 11-05 / 11-12 / 11-20)이며, 해당 기간 사이에 추가 게시글은 없습니다(RSS·글 목록 대조).",
+      "CFS KOREA 클립 채널(cfs_korea_)은 10~11월 게시 클립이 3건(10-20 / 11-10 / 11-16)입니다. 11-16 클립은 프로필 그리드 조회수가 0으로 표시되었습니다.",
       "클립 조회수·재생시간은 프로필 그리드, 좋아요·댓글은 클립 피드에서 확인했습니다.",
-      "클립 중 가장 최근 게시물은 프로필에 '3일 전'으로 표시되어 2026-11-23으로 기록했습니다."
+      "네이버 블로그의 글별 조회수와 공감수는 집계 기준이 달라, 공감수가 조회수보다 크게 표시되는 글도 있습니다(예: CFS KOREA 11-20 글 조회수 18 / 공감 35). 원본 값 그대로 기록했습니다."
     ]
+  },
+  "updated_at": "2026-11-26T16:10:00+09:00",
+  "period": {
+    "start": "2026-10-01",
+    "end": "2026-11-26",
+    "label": "2026년 10월 ~ 11월"
+  },
+  "accounts": [
+    {
+      "account_id": "kyk123146",
+      "account_name": "올인원 이엔씨",
+      "blog": {
+        "id": "kyk123146",
+        "name": "올인원 이엔씨",
+        "url": "https://blog.naver.com/kyk123146",
+        "total_posts_all_time": 869
+      },
+      "clip": {
+        "handle": "@allinone_enc",
+        "name": "올인원 이엔씨",
+        "url": "https://clip.naver.com/@allinone_enc?tab=all&filter=all",
+        "total_clips_all_time": 43,
+        "followers": 498,
+        "following": 676
+      }
+    },
+    {
+      "account_id": "kyk123159",
+      "account_name": "CFS KOREA",
+      "blog": {
+        "id": "kyk123159",
+        "name": "CFS KOREA (씨에프에스코리아)",
+        "url": "https://blog.naver.com/kyk123159",
+        "total_posts_all_time": 252
+      },
+      "clip": {
+        "handle": "cfs_korea_",
+        "name": "씨에프에스코리아",
+        "url": "https://clip.naver.com/@cfs_korea_?tab=all&filter=all",
+        "total_clips_all_time": 23,
+        "followers": 488,
+        "following": 468
+      }
+    }
+  ],
+  "account": {
+    "naver_id": "kyk123146",
+    "blog": {
+      "id": "kyk123146",
+      "name": "올인원 이엔씨",
+      "url": "https://blog.naver.com/kyk123146",
+      "total_posts_all_time": 869
+    },
+    "clip": {
+      "handle": "@allinone_enc",
+      "name": "올인원 이엔씨",
+      "url": "https://clip.naver.com/@allinone_enc?tab=all&filter=all",
+      "total_clips_all_time": 43,
+      "followers": 498,
+      "following": 676
+    }
+  },
+  "summary": {
+    "total": {
+      "count": 13,
+      "views": 821,
+      "likes": 359,
+      "comments": 77
+    },
+    "by_account": {
+      "kyk123146": {
+        "count": 7,
+        "views": 563,
+        "likes": 173,
+        "comments": 39
+      },
+      "kyk123159": {
+        "count": 6,
+        "views": 258,
+        "likes": 186,
+        "comments": 38
+      }
+    },
+    "by_month": {
+      "2026-10": {
+        "count": 6,
+        "views": 615,
+        "likes": 159,
+        "comments": 32
+      },
+      "2026-11": {
+        "count": 7,
+        "views": 206,
+        "likes": 200,
+        "comments": 45
+      }
+    }
   },
   "items": [
     {
@@ -113,6 +219,28 @@
       "comments": 4,
       "collected_at": "2026-11-26T15:30:00+09:00",
       "source": "NAVER Blog · 블로그 글 목록(조회수·댓글) + 관리자 통계 공감수 순위 + 포스트 페이지 공감",
+      "note": null,
+      "account_id": "kyk123146",
+      "account_name": "올인원 이엔씨"
+    },
+    {
+      "platform": "blog",
+      "id": "224484438867",
+      "account_id": "kyk123159",
+      "account_name": "CFS KOREA",
+      "title": "콘크리트 연마 실패 원인 1순위, 잘못된 레진패드 본드 선택과 해결법",
+      "content": "안녕하세요, 콘크리트 바닥 연마 장비, 소모품 전문 씨에프에스코리아입니다 :-) 콘크리트 바닥 연마 시 강도에 따라 연마 패드를 달리 해야 한다는 정보 알고 계셨나요? 바닥 연마(콘크리트 폴리싱 등) 작업에서 바닥의 강도(경도)와 레진패드의 본드(결합재) 경도가 맞지 않으면 단순히 작업 효율이 떨어지는 수준을 넘어 시공 실패, 자재비 폭증, 장비 파손이라는 비극으로 이어집니다. 그렇다면, 적합한 패드를 선택하는 방법은 무엇일까요? 알고보면 원리는 간단합니다. '단단한 바닥에는 부드러운(소프트) 패드, 무른 바닥에는 단단한(하드) 패드'를 써야 패드가 적절히 마모되면서 새로운 다이아몬드 입자가 계속 노출됩니다. 아.......",
+      "category": "그라인딩패드",
+      "published_at": "2026-11-20",
+      "published_at_full": "2026-11-20T10:24:59+09:00",
+      "url": "https://blog.naver.com/kyk123159/224484438867",
+      "views": 18,
+      "likes": 35,
+      "comments": 7,
+      "duration": null,
+      "duration_seconds": null,
+      "collected_at": "2026-11-26T16:10:00+09:00",
+      "source": "NAVER Blog · 글별 통계(blog.stat.naver.com/blog/article/{logNo}/cv) 누적 조회수·공감수·댓글수 + RSS(제목·카테고리·게시일·본문 요약)",
       "note": null
     },
     {
@@ -129,6 +257,28 @@
       "comments": 7,
       "collected_at": "2026-11-26T15:30:00+09:00",
       "source": "NAVER Blog · 블로그 글 목록(조회수·댓글) + 관리자 통계 공감수 순위 + 포스트 페이지 공감",
+      "note": null,
+      "account_id": "kyk123146",
+      "account_name": "올인원 이엔씨"
+    },
+    {
+      "platform": "blog",
+      "id": "224474254136",
+      "account_id": "kyk123159",
+      "account_name": "CFS KOREA",
+      "title": "“약품은 나중에 고르면 되죠”라고 생각하셨다면 꼭 읽어보세요. 콘크리트 바닥 시공 전, 약품을 알면 결과물이 달라집니다.",
+      "content": "“약품은 나중에 고르면 되죠”라고 생각하셨다면 꼭 읽어보세요 바닥 시공에서 가장 큰 비용은 약품 한 통의 가격이 아닙니다. 시공이 끝난 뒤 분진이 남거나, 표면이 고르지 않거나, 백화가 생겨 다시 작업해야 할 때 발생하는 시간과 비용입니다. 그래서 바닥 시공을 앞두고 있다면 장비 뿐만 아니라 약품도 먼저 알아둬야 합니다. 같은 콘크리트 바닥이라도 '어떤 제품을 선택'하고 '얼마만큼 희석'하며 '어떤 순서로 도포'하고 '얼마 동안 건조·양생'하느냐에 따라 최종 표면의 안정성과 관리성이 달라질 수 있기 때문입니다. 이번 글에서 CFS KOREA의 공식 사양을 기준으로 CFS COAT, CFS SEALER,.......",
+      "category": "강화제 및 실러",
+      "published_at": "2026-11-12",
+      "published_at_full": "2026-11-12T13:37:00+09:00",
+      "url": "https://blog.naver.com/kyk123159/224474254136",
+      "views": 41,
+      "likes": 44,
+      "comments": 9,
+      "duration": null,
+      "duration_seconds": null,
+      "collected_at": "2026-11-26T16:10:00+09:00",
+      "source": "NAVER Blog · 글별 통계(blog.stat.naver.com/blog/article/{logNo}/cv) 누적 조회수·공감수·댓글수 + RSS(제목·카테고리·게시일·본문 요약)",
       "note": null
     },
     {
@@ -145,7 +295,9 @@
       "comments": 4,
       "collected_at": "2026-11-26T15:30:00+09:00",
       "source": "NAVER Blog · 블로그 글 목록(조회수·댓글) + 관리자 통계 공감수 순위 + 포스트 페이지 공감",
-      "note": null
+      "note": null,
+      "account_id": "kyk123146",
+      "account_name": "올인원 이엔씨"
     },
     {
       "platform": "blog",
@@ -161,6 +313,48 @@
       "comments": 3,
       "collected_at": "2026-11-26T15:30:00+09:00",
       "source": "NAVER Blog · 블로그 글 목록(조회수·댓글) + 관리자 통계 공감수 순위 + 포스트 페이지 공감",
+      "note": null,
+      "account_id": "kyk123146",
+      "account_name": "올인원 이엔씨"
+    },
+    {
+      "platform": "blog",
+      "id": "224465932065",
+      "account_id": "kyk123159",
+      "account_name": "CFS KOREA",
+      "title": "연마 장비 빌리면서, 연마 전용 소모품까지 빠르게 한 곳에서 해결하세요. CFS KOREA 렌탈 안내",
+      "content": "장비 한 대 때문에 오더가 들어온 시공 현장을 놓치고 계시진 않나요? 바닥 연마 일을 하다 보면 이런 때가 있습니다. \"일은 들어왔는데, 이번 현장에 맞는 장비가 없습니다. 사자니 부담이고, 안 사자니 일을 놓치게 됩니다.\" 이럴 때 가장 재빠르고 현실적인 방법이 장비 렌탈입니다. CFS KOREA는 현장에서 쓰는 바닥 연마 장비와 집진기를 단기, 장기로 빌려드립니다. 이 글에서는 장비에 어울리는 약품(케미컬)도 함께 안내해 드리려고 합니다. :) 빌려 쓰면 무엇이 달라질까요 장비를 사지 않아도 시공이 가능합니다 한두 현장만을 위해 큰 비용을 들이지 않고, 필요한 기간만 쓰시면 됩니다. 현장에 맞는 장비를 고를 수 있.......",
+      "category": "그라인더",
+      "published_at": "2026-11-05",
+      "published_at_full": "2026-11-05T14:04:37+09:00",
+      "url": "https://blog.naver.com/kyk123159/224465932065",
+      "views": 38,
+      "likes": 31,
+      "comments": 11,
+      "duration": null,
+      "duration_seconds": null,
+      "collected_at": "2026-11-26T16:10:00+09:00",
+      "source": "NAVER Blog · 글별 통계(blog.stat.naver.com/blog/article/{logNo}/cv) 누적 조회수·공감수·댓글수 + RSS(제목·카테고리·게시일·본문 요약)",
+      "note": null
+    },
+    {
+      "platform": "blog",
+      "id": "224459155643",
+      "account_id": "kyk123159",
+      "account_name": "CFS KOREA",
+      "title": "대형 장비 못 들어가는 현장, 소형 바닥 연마기 CFS-K520로 가볍게 해결",
+      "content": "장비는 챙겼는데, 폭이 좁아 못 들어간 적 있으세요? 바닥 연마 현장에서 가장 먼저 부딪히는 문제중의 하나는 입구와 통로입니다. 좋은 장비를 가져가도 문과 통로를 통과하지 못하면 그날 작업은 시작도 못 합니다. 건물이 오래될수록, 실내 공간이 좁을수록 이런 일이 잦습니다. CFS-K520은 이런 현장을 위한 소형 바닥 연마 장비입니다. 55cm~60cm 통로나 출입구도 문제없이 들어가는 컴팩트한 사이즈에, 현장 작업에 필요한 기능을 싹 담았습니다. 구매하지 않고 렌탈로도 쓰실 수 있습니다. (단기/장기 렌탈 모두 가능합니다.) 1. 이런 현장에서 쓰세요 K520이 힘을 발휘하는 곳은 대형 장비가 들어가기 어려운 현장입니다. 출입구와.......",
+      "category": "그라인더",
+      "published_at": "2026-10-30",
+      "published_at_full": "2026-10-30T15:59:18+09:00",
+      "url": "https://blog.naver.com/kyk123159/224459155643",
+      "views": 24,
+      "likes": 5,
+      "comments": 1,
+      "duration": null,
+      "duration_seconds": null,
+      "collected_at": "2026-11-26T16:10:00+09:00",
+      "source": "NAVER Blog · 글별 통계(blog.stat.naver.com/blog/article/{logNo}/cv) 누적 조회수·공감수·댓글수 + RSS(제목·카테고리·게시일·본문 요약)",
       "note": null
     },
     {
@@ -177,7 +371,49 @@
       "comments": 8,
       "collected_at": "2026-11-26T15:30:00+09:00",
       "source": "NAVER Blog · 블로그 글 목록(조회수·댓글) + 관리자 통계 공감수 순위 + 포스트 페이지 공감",
-      "note": "공감수는 관리자 통계(공감수 순위: 2026.10 + 이후 주간 합산)로 산출"
+      "note": "공감수는 관리자 통계(공감수 순위: 2026.10 + 이후 주간 합산)로 산출",
+      "account_id": "kyk123146",
+      "account_name": "올인원 이엔씨"
+    },
+    {
+      "platform": "blog",
+      "id": "224449214896",
+      "account_id": "kyk123159",
+      "account_name": "CFS KOREA",
+      "title": "따끈따끈한 CFS 신상 표면강화제 '리튬하드너'를 소개합니다 (소듐 vs 리튬 비교 & 시공법)",
+      "content": "콘크리트 바닥 시공의 든든한 파트너, CFS KOREA입니다. 드디어 많은 분이 기다려 주셨던 소식을 전해 드립니다. 바로 오늘 소개해 드릴 따끈따끈한 CFS 신규 상품 리튬하드너 입니다. 콘크리트 폴리싱이나 바닥 마감 현장에 계신 분들이라면 '하드너(표면강화제)'의 역할이 얼마나 중요한지 다들 잘 아실 텐데요. 그동안 많은 현장에서 검증받은 기존 CFS 하드너에 이어 한층 더 높은 침투력과 깔끔한 마감 품질을 갖춘 신제품 'CFS 리튬하드너(LI)'가 새롭게 라인업에 합류했습니다. CFS 신상 리튬하드너는 기존 제품과 무엇이 다른지, 그리고 왜 현장에서 주목받고 있는지 핵심만 콕 짚어 정리해 드립니다! CFS 신상 .......",
+      "category": "강화제 및 실러",
+      "published_at": "2026-10-21",
+      "published_at_full": "2026-10-21T17:49:15+09:00",
+      "url": "https://blog.naver.com/kyk123159/224449214896",
+      "views": 49,
+      "likes": 27,
+      "comments": 2,
+      "duration": null,
+      "duration_seconds": null,
+      "collected_at": "2026-11-26T16:10:00+09:00",
+      "source": "NAVER Blog · 글별 통계(blog.stat.naver.com/blog/article/{logNo}/cv) 누적 조회수·공감수·댓글수 + RSS(제목·카테고리·게시일·본문 요약)",
+      "note": null
+    },
+    {
+      "platform": "blog",
+      "id": "224446486027",
+      "account_id": "kyk123159",
+      "account_name": "CFS KOREA",
+      "title": "하드너 바르고 나서 뭘 발라야 하죠? 콘크리트 폴리싱 실러 vs 세라믹 차이",
+      "content": "\"하드너는 발랐는데, 그다음엔 실러를 발라야 하나요, 세라믹을 발라야 하나요?\" 콘크리트 폴리싱 현장에서 가장 자주 받는 질문입니다. 두 제품 모두 바닥을 반짝이게 한다는 점은 같지만 어떤 공간에 쓰느냐에 따라 맞는 선택이 달라집니다. 공간에 딱 알맞게, 나중에 다시 손봐야 하는 일도 없도록. 실러와 세라믹의 차이를 현장 기준으로 정리해 드립니다. 기본 개념 정리부터! 하드너와는 역할이 다릅니다 본격적인 비교에 앞서 가장 많이 헷갈려 하시는 부분을 짚고 넘어가겠습니다. 많은 분이 바닥 강화제인 '하드너'와 코팅제인 '실러/세라믹'을 비슷한 용도로 생각하시곤 합니다. 〈하드너〉 콘크리트 내.......",
+      "category": "강화제 및 실러",
+      "published_at": "2026-10-19",
+      "published_at_full": "2026-10-19T13:34:42+09:00",
+      "url": "https://blog.naver.com/kyk123159/224446486027",
+      "views": 88,
+      "likes": 44,
+      "comments": 8,
+      "duration": null,
+      "duration_seconds": null,
+      "collected_at": "2026-11-26T16:10:00+09:00",
+      "source": "NAVER Blog · 글별 통계(blog.stat.naver.com/blog/article/{logNo}/cv) 누적 조회수·공감수·댓글수 + RSS(제목·카테고리·게시일·본문 요약)",
+      "note": null
     },
     {
       "platform": "blog",
@@ -193,7 +429,9 @@
       "comments": 4,
       "collected_at": "2026-11-26T15:30:00+09:00",
       "source": "NAVER Blog · 블로그 글 목록(조회수·댓글) + 관리자 통계 공감수 순위 + 포스트 페이지 공감",
-      "note": "공감수는 관리자 통계(공감수 순위: 2026.10 + 이후 주간 합산)로 산출"
+      "note": "공감수는 관리자 통계(공감수 순위: 2026.10 + 이후 주간 합산)로 산출",
+      "account_id": "kyk123146",
+      "account_name": "올인원 이엔씨"
     },
     {
       "platform": "blog",
@@ -209,7 +447,9 @@
       "comments": 9,
       "collected_at": "2026-11-26T15:30:00+09:00",
       "source": "NAVER Blog · 블로그 글 목록(조회수·댓글) + 관리자 통계 공감수 순위 + 포스트 페이지 공감",
-      "note": "공감수는 관리자 통계(공감수 순위: 2026.10 + 이후 주간 합산)로 산출"
+      "note": "공감수는 관리자 통계(공감수 순위: 2026.10 + 이후 주간 합산)로 산출",
+      "account_id": "kyk123146",
+      "account_name": "올인원 이엔씨"
     }
   ]
 }

@@ -3,8 +3,8 @@
 <head>
 <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
-<title>올인원 이엔씨 · 10~11월 콘텐츠 대시보드</title>
-<meta name="description" content="네이버 블로그·클립 2026년 10~11월 콘텐츠 성과 대시보드" />
+<title>올인원 이엔씨 · CFS KOREA · 10~11월 콘텐츠 대시보드</title>
+<meta name="description" content="네이버 블로그·클립 두 계정(올인원 이엔씨 · CFS KOREA) 2026년 10~11월 콘텐츠 성과 대시보드" />
 <style>
   :root{
     --bg:#f4f6f8;
@@ -58,6 +58,16 @@
   .tag{display:inline-flex;align-items:center;gap:5px;padding:2px 8px;border-radius:999px;font-size:11.5px;font-weight:600;white-space:nowrap}
   .tag.blog{background:var(--blog-soft);color:var(--blog)}
   .tag.clip{background:var(--clip-soft);color:var(--clip)}
+  .tag.acct{background:#eef1f6;color:#374151}
+  .tag.acct.a159{background:var(--brand-soft);color:var(--brand)}
+
+  .acct-table{width:100%;border-collapse:collapse;font-size:13.5px;min-width:520px}
+  .acct-table th{text-align:left;font-size:12.5px;color:var(--ink-3);font-weight:600;padding:8px 10px;border-bottom:1px solid var(--line);white-space:nowrap}
+  .acct-table td{padding:11px 10px;border-bottom:1px solid #f0f2f5;font-variant-numeric:tabular-nums}
+  .acct-table td.n, .acct-table th.n{text-align:right}
+  .acct-table tr:last-child td{border-bottom:0}
+  .acct-table .an{font-weight:700;white-space:nowrap}
+  .acct-table .as{font-size:12px;color:var(--ink-3);font-weight:500}
 
   .panel{background:var(--card);border-radius:var(--radius);box-shadow:var(--shadow);padding:22px 24px;margin-top:20px;border:1px solid var(--line)}
   .panel h2{margin:0 0 4px;font-size:16px;letter-spacing:-.01em}
@@ -90,7 +100,7 @@
   .barrow .bv{text-align:right;color:var(--ink-2);font-variant-numeric:tabular-nums;font-weight:600}
 
   .tablewrap{overflow-x:auto;margin:0 -6px}
-  table{border-collapse:collapse;width:100%;font-size:14px;min-width:860px}
+  table{border-collapse:collapse;width:100%;font-size:14px;min-width:960px}
   thead th{
     text-align:left;font-size:12.5px;color:var(--ink-3);font-weight:600;letter-spacing:.02em;
     padding:10px 12px;border-bottom:1px solid var(--line);white-space:nowrap;
@@ -153,11 +163,11 @@
 <body>
 <header class="top">
   <div class="wrap">
-    <div class="eyebrow">ALL IN ONE E&amp;C · CONTENT REPORT</div>
-    <h1>올인원 이엔씨 10~11월 콘텐츠 성과</h1>
+    <div class="eyebrow">ALL IN ONE E&amp;C · CFS KOREA · CONTENT REPORT</div>
+    <h1>올인원 이엔씨 · CFS KOREA 10~11월 콘텐츠 성과</h1>
     <div class="sub">
-      <strong>네이버 블로그</strong> @kyk123146 <span class="dot">·</span>
-      <strong>네이버 클립</strong> @allinone_enc <span class="dot">·</span>
+      <strong>네이버 블로그</strong> @kyk123146 · @kyk123159 <span class="dot">·</span>
+      <strong>네이버 클립</strong> @allinone_enc · cfs_korea_ <span class="dot">·</span>
       2026-10-01 ~ 2026-11-26
     </div>
   </div>
@@ -187,10 +197,16 @@
     </div>
   </section>
 
+  <section class="panel">
+    <h2>계정별 요약</h2>
+    <p class="hint">같은 기간(2026-10-01 ~ 2026-11-26) 두 네이버 계정의 콘텐츠·반응 비교</p>
+    <div class="tablewrap" id="account-summary"></div>
+  </section>
+
   <section class="panel charts">
     <div>
       <h2>월별 조회수</h2>
-      <p class="hint">게시월 기준 누적 조회수</p>
+      <p class="hint">게시월 · 계정별 누적 조회수</p>
       <div class="bars" id="chart-month"></div>
     </div>
     <div>
@@ -203,6 +219,14 @@
   <section class="panel">
     <div class="toolbar">
       <div class="groups">
+        <div class="group">
+          <span class="glabel">계정</span>
+          <div class="chips" id="f-account">
+            <button class="chip active" data-value="all">전체</button>
+            <button class="chip" data-value="kyk123146">올인원 이엔씨</button>
+            <button class="chip" data-value="kyk123159">CFS KOREA</button>
+          </div>
+        </div>
         <div class="group">
           <span class="glabel">플랫폼</span>
           <div class="chips" id="f-platform">
@@ -239,7 +263,7 @@
     <div class="links">
       <div class="linkbox">
         <div class="lb-title">contents.json</div>
-        <div class="lb-desc">전체 15건 · 메타데이터 + 요약 포함 (JSON)</div>
+        <div class="lb-desc" id="desc-json">전체 · 메타데이터 + 요약 포함 (JSON)</div>
         <div class="urlrow">
           <input id="url-json" readonly />
           <button class="copy" data-target="url-json">복사</button>
@@ -257,7 +281,7 @@
       </div>
       <div class="linkbox">
         <div class="lb-title">blog.json</div>
-        <div class="lb-desc">네이버 블로그 7건만 (JSON)</div>
+        <div class="lb-desc" id="desc-blog">네이버 블로그만 (JSON)</div>
         <div class="urlrow">
           <input id="url-blog" readonly />
           <button class="copy" data-target="url-blog">복사</button>
@@ -265,7 +289,7 @@
       </div>
       <div class="linkbox">
         <div class="lb-title">clips.json</div>
-        <div class="lb-desc">네이버 클립 8건만 (JSON)</div>
+        <div class="lb-desc" id="desc-clips">네이버 클립만 (JSON)</div>
         <div class="urlrow">
           <input id="url-clips" readonly />
           <button class="copy" data-target="url-clips">복사</button>
@@ -275,14 +299,14 @@
   </section>
 
   <footer>
-    <div><strong>수집 시점</strong> <span id="collected">–</span> · 네이버 블로그 관리자 통계 및 공개 프로필 기준</div>
+    <div><strong>수집 시점</strong> <span id="collected">–</span> · 네이버 블로그 글별 통계 · 네이버 클립 프로필 기준</div>
     <ul id="notes"></ul>
   </footer>
 </div>
 
 <script>
 (function(){
-  const state = { platform:'all', month:'all', q:'', sortKey:'published_at', sortDir:-1, data:null };
+  const state = { account:'all', platform:'all', month:'all', q:'', sortKey:'published_at', sortDir:-1, data:null };
 
   const fmt = n => (n===null||n===undefined||isNaN(n)) ? '–' : Number(n).toLocaleString('ko-KR');
   const esc = s => String(s==null?'':s).replace(/[&<>"']/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
@@ -301,10 +325,11 @@
   function filtered(){
     const q = state.q.trim().toLowerCase();
     return state.data.items.filter(it=>{
+      if(state.account!=='all' && it.account_id!==state.account) return false;
       if(state.platform!=='all' && it.platform!==state.platform) return false;
       if(state.month!=='all' && (it.published_at||'').slice(0,7)!==state.month) return false;
       if(q){
-        const hay = [it.title,it.content,it.category,it.id].join(' ').toLowerCase();
+        const hay = [it.title,it.content,it.category,it.id,it.account_name].join(' ').toLowerCase();
         if(!hay.includes(q)) return false;
       }
       return true;
@@ -324,20 +349,52 @@
     });
   }
 
-  function renderKpis(){
-    const s = state.data.summary;
-    document.getElementById('k-count').innerHTML = fmt(s.total.count)+'<small>건</small>';
+  const sum = rows => ({
+    count: rows.length,
+    views: rows.reduce((a,r)=>a+(r.views||0),0),
+    likes: rows.reduce((a,r)=>a+(r.likes||0),0),
+    comments: rows.reduce((a,r)=>a+(r.comments||0),0)
+  });
+  const sumPf = (rows,p) => sum(rows.filter(r=>r.platform===p));
+
+  function renderKpis(rows){
+    const t = sum(rows), b = sumPf(rows,'blog'), c = sumPf(rows,'clip');
+    document.getElementById('k-count').innerHTML = fmt(t.count)+'<small>건</small>';
     document.getElementById('k-count-foot').innerHTML =
-      `<span class="tag blog">블로그 ${s.by_platform.blog.count}</span><span class="tag clip">클립 ${s.by_platform.clip.count}</span>`;
-    document.getElementById('k-views').textContent = fmt(s.total.views);
+      `<span class="tag blog">블로그 ${b.count}</span><span class="tag clip">클립 ${c.count}</span>`;
+    document.getElementById('k-views').textContent = fmt(t.views);
     document.getElementById('k-views-foot').innerHTML =
-      `<span>블로그 ${fmt(s.by_platform.blog.views)}</span><span style="color:#d1d5db">|</span><span>클립 ${fmt(s.by_platform.clip.views)}</span>`;
-    document.getElementById('k-likes').textContent = fmt(s.total.likes);
+      `<span>블로그 ${fmt(b.views)}</span><span style="color:#d1d5db">|</span><span>클립 ${fmt(c.views)}</span>`;
+    document.getElementById('k-likes').textContent = fmt(t.likes);
     document.getElementById('k-likes-foot').innerHTML =
-      `<span>블로그 ${fmt(s.by_platform.blog.likes)}</span><span style="color:#d1d5db">|</span><span>클립 ${fmt(s.by_platform.clip.likes)}</span>`;
-    document.getElementById('k-comments').textContent = fmt(s.total.comments);
+      `<span>블로그 ${fmt(b.likes)}</span><span style="color:#d1d5db">|</span><span>클립 ${fmt(c.likes)}</span>`;
+    document.getElementById('k-comments').textContent = fmt(t.comments);
     document.getElementById('k-comments-foot').innerHTML =
-      `<span>블로그 ${fmt(s.by_platform.blog.comments)}</span><span style="color:#d1d5db">|</span><span>클립 ${fmt(s.by_platform.clip.comments)}</span>`;
+      `<span>블로그 ${fmt(b.comments)}</span><span style="color:#d1d5db">|</span><span>클립 ${fmt(c.comments)}</span>`;
+  }
+
+  function renderAccountSummary(){
+    const s = state.data.summary;
+    const accts = (state.data.meta && state.data.meta.accounts) || [];
+    const rows = accts.map(a=>{
+      const st = (s.by_account && s.by_account[a.account_id]) || {count:0,views:0,likes:0,comments:0};
+      const bp = st.by_platform || {};
+      const blog = bp.blog || {count:0}, clip = bp.clip || {count:0};
+      const cls = a.account_id==='kyk123159' ? 'acct a159' : 'acct';
+      return `<tr>
+        <td><span class="an">${esc(a.account_name)}</span><div class="as">블로그 @${esc(a.blog.id)} · 클립 ${esc(a.clip.handle)}</div></td>
+        <td class="n"><span class="tag ${cls}">계정</span></td>
+        <td class="n">${fmt(st.count)}<span class="as"> (블로그 ${fmt(blog.count)} / 클립 ${fmt(clip.count)})</span></td>
+        <td class="n">${fmt(st.views)}</td>
+        <td class="n">${fmt(st.likes)}</td>
+        <td class="n">${fmt(st.comments)}</td>
+      </tr>`;
+    }).join('');
+    const tot = s.total || {};
+    document.getElementById('account-summary').innerHTML = `<table class="acct-table">
+      <thead><tr><th>계정</th><th class="n"></th><th class="n">콘텐츠</th><th class="n">조회수</th><th class="n">공감·좋아요</th><th class="n">댓글</th></tr></thead>
+      <tbody>${rows}
+      <tr><td class="an">합계</td><td></td><td class="n">${fmt(tot.count)}</td><td class="n">${fmt(tot.views)}</td><td class="n">${fmt(tot.likes)}</td><td class="n">${fmt(tot.comments)}</td></tr></tbody></table>`;
   }
 
   function bars(el, rows){
@@ -352,9 +409,13 @@
 
   function renderCharts(){
     const s = state.data.summary;
+    const am = s.by_account_month || {};
+    const v = (aid,m) => ((am[aid]||{})[m]||{}).views || 0;
     bars(document.getElementById('chart-month'), [
-      {label:'10월', value:s.by_month['2026-10'].views},
-      {label:'11월', value:s.by_month['2026-11'].views}
+      {label:'10월 · 올인원', value:v('kyk123146','2026-10'), cls:'blog'},
+      {label:'10월 · CFS', value:v('kyk123159','2026-10'), cls:'clip'},
+      {label:'11월 · 올인원', value:v('kyk123146','2026-11'), cls:'blog'},
+      {label:'11월 · CFS', value:v('kyk123159','2026-11'), cls:'clip'}
     ]);
     bars(document.getElementById('chart-platform'), [
       {label:'블로그 조회', value:s.by_platform.blog.views, cls:'blog'},
@@ -366,6 +427,7 @@
 
   const COLS = [
     {key:'title', label:'제목', cls:''},
+    {key:'account_name', label:'계정', cls:''},
     {key:'platform', label:'플랫폼', cls:''},
     {key:'category', label:'카테고리', cls:''},
     {key:'published_at', label:'게시일', cls:''},
@@ -389,12 +451,15 @@
       const badge = it.platform==='blog'
         ? '<span class="tag blog">블로그</span>'
         : '<span class="tag clip">클립</span>';
+      const acc = it.account_name || (it.account_id==='kyk123159' ? 'CFS KOREA' : '올인원 이엔씨');
+      const accCls = it.account_id==='kyk123159' ? 'acct a159' : 'acct';
       const dur = it.platform==='clip' && it.duration ? `<div class="dur">${esc(it.duration)}</div>` : '';
       return `<tr>
         <td class="t-title">
           <a href="${esc(it.url)}" target="_blank" rel="noopener">${esc(it.title)}</a>
           <div class="t-sub">${esc(it.content||'')}</div>
         </td>
+        <td class="pf"><span class="tag ${accCls}">${esc(acc)}</span></td>
         <td class="pf">${badge}${dur}</td>
         <td><span class="cat" title="${esc(it.category)}">${esc(it.category)}</span></td>
         <td class="date">${esc(it.published_at)}</td>
@@ -430,6 +495,14 @@
       const el = document.getElementById(id);
       if(el){ el.value = v; }
     });
+    const items = state.data.items;
+    const n = p => items.filter(i=>i.platform===p).length;
+    const dj = document.getElementById('desc-json');
+    if(dj) dj.textContent = `전체 ${items.length}건 · 메타데이터 + 요약 포함 (JSON)`;
+    const db = document.getElementById('desc-blog');
+    if(db) db.textContent = `네이버 블로그 ${n('blog')}건만 (JSON)`;
+    const dc = document.getElementById('desc-clips');
+    if(dc) dc.textContent = `네이버 클립 ${n('clip')}건만 (JSON)`;
     document.getElementById('open-json').href = map['url-json'];
     document.getElementById('open-csv').href = map['url-csv'];
     document.querySelectorAll('button.copy').forEach(btn=>{
@@ -450,9 +523,12 @@
   }
 
   function render(){
+    const rows = filtered();
+    renderKpis(rows);
     renderTable();
   }
 
+  setChips('f-account','account');
   setChips('f-platform','platform');
   setChips('f-month','month');
   let t;
@@ -465,7 +541,7 @@
     .then(r=>{ if(!r.ok) throw new Error('HTTP '+r.status); return r.json(); })
     .then(data=>{
       state.data = data;
-      renderKpis(); renderCharts(); renderTable(); fillLinks();
+      render(); renderCharts(); renderAccountSummary(); renderTable(); fillLinks();
       document.getElementById('collected').textContent = (data.meta && data.meta.updated_at || data.updated_at || '').replace('T',' ').slice(0,16);
       document.getElementById('notes').innerHTML = ((data.meta && data.meta.notes) || []).map(n=>`<li>${esc(n)}</li>`).join('');
     })

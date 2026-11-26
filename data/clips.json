@@ -1,11 +1,49 @@
 {
   "meta": {
-    "updated_at": "2026-11-26T15:30:00+09:00",
+    "updated_at": "2026-11-26T16:10:00+09:00",
     "period": {
       "start": "2026-10-01",
       "end": "2026-11-26",
       "label": "2026년 10월 ~ 11월"
     },
+    "accounts": [
+      {
+        "account_id": "kyk123146",
+        "account_name": "올인원 이엔씨",
+        "blog": {
+          "id": "kyk123146",
+          "name": "올인원 이엔씨",
+          "url": "https://blog.naver.com/kyk123146",
+          "total_posts_all_time": 869
+        },
+        "clip": {
+          "handle": "@allinone_enc",
+          "name": "올인원 이엔씨",
+          "url": "https://clip.naver.com/@allinone_enc?tab=all&filter=all",
+          "total_clips_all_time": 43,
+          "followers": 498,
+          "following": 676
+        }
+      },
+      {
+        "account_id": "kyk123159",
+        "account_name": "CFS KOREA",
+        "blog": {
+          "id": "kyk123159",
+          "name": "CFS KOREA (씨에프에스코리아)",
+          "url": "https://blog.naver.com/kyk123159",
+          "total_posts_all_time": 252
+        },
+        "clip": {
+          "handle": "cfs_korea_",
+          "name": "씨에프에스코리아",
+          "url": "https://clip.naver.com/@cfs_korea_?tab=all&filter=all",
+          "total_clips_all_time": 23,
+          "followers": 488,
+          "following": 468
+        }
+      }
+    ],
     "account": {
       "naver_id": "kyk123146",
       "blog": {
@@ -25,78 +63,146 @@
     },
     "summary": {
       "total": {
-        "count": 15,
-        "views": 642,
-        "likes": 189,
-        "comments": 49
+        "count": 11,
+        "views": 116,
+        "likes": 26,
+        "comments": 17
       },
-      "by_platform": {
-        "blog": {
-          "count": 7,
-          "views": 563,
-          "likes": 173,
-          "comments": 39
-        },
-        "clip": {
+      "by_account": {
+        "kyk123146": {
           "count": 8,
           "views": 79,
           "likes": 16,
           "comments": 10
+        },
+        "kyk123159": {
+          "count": 3,
+          "views": 37,
+          "likes": 10,
+          "comments": 7
         }
       },
       "by_month": {
         "2026-10": {
-          "count": 7,
-          "views": 521,
-          "likes": 93,
-          "comments": 26
+          "count": 5,
+          "views": 95,
+          "likes": 16,
+          "comments": 8
         },
         "2026-11": {
-          "count": 8,
-          "views": 121,
-          "likes": 96,
-          "comments": 23
-        }
-      },
-      "by_month_platform": {
-        "2026-10": {
-          "blog": {
-            "count": 3,
-            "views": 454,
-            "likes": 83,
-            "comments": 21
-          },
-          "clip": {
-            "count": 4,
-            "views": 67,
-            "likes": 10,
-            "comments": 5
-          }
-        },
-        "2026-11": {
-          "blog": {
-            "count": 4,
-            "views": 109,
-            "likes": 90,
-            "comments": 18
-          },
-          "clip": {
-            "count": 4,
-            "views": 12,
-            "likes": 6,
-            "comments": 5
-          }
+          "count": 6,
+          "views": 21,
+          "likes": 10,
+          "comments": 9
         }
       }
     },
-    "schema_version": "1.0",
+    "schema_version": "2.0",
     "notes": [
-      "조회수·공감은 수집 시점(2026-11-26 15:30 KST) 기준 값입니다.",
-      "블로그 조회수는 네이버 블로그 글 목록에 표시되는 값, 댓글수는 글 목록의 (댓글 수) 값입니다.",
-      "블로그 공감수는 포스트 페이지의 공감 수를 확인했으며, 10월 게시글은 포스트 페이지에 값이 표시되지 않아 관리자 통계 '공감수 순위'(2026.10 월간 + 11월 주간 합산)로 산출했습니다.",
+      "조회수·공감은 수집 시점(2026-11-26 16:10 KST) 기준 값입니다.",
+      "블로그 조회수·공감수·댓글수: 올인원 이엔씨(kyk123146) 글은 글 목록 조회수·포스트 페이지 공감·관리자 통계 '공감수 순위', CFS KOREA(kyk123159) 글은 글별 통계 페이지(blog.stat.naver.com/blog/article/{logNo}/cv)의 누적값으로 확인했습니다.",
+      "CFS KOREA 블로그 글은 10~11월에 6건(10-19 / 10-21 / 10-30 / 11-05 / 11-12 / 11-20)이며, 해당 기간 사이에 추가 게시글은 없습니다(RSS·글 목록 대조).",
+      "CFS KOREA 클립 채널(cfs_korea_)은 10~11월 게시 클립이 3건(10-20 / 11-10 / 11-16)입니다. 11-16 클립은 프로필 그리드 조회수가 0으로 표시되었습니다.",
       "클립 조회수·재생시간은 프로필 그리드, 좋아요·댓글은 클립 피드에서 확인했습니다.",
-      "클립 중 가장 최근 게시물은 프로필에 '3일 전'으로 표시되어 2026-11-23으로 기록했습니다."
+      "네이버 블로그의 글별 조회수와 공감수는 집계 기준이 달라, 공감수가 조회수보다 크게 표시되는 글도 있습니다(예: CFS KOREA 11-20 글 조회수 18 / 공감 35). 원본 값 그대로 기록했습니다."
     ]
+  },
+  "updated_at": "2026-11-26T16:10:00+09:00",
+  "period": {
+    "start": "2026-10-01",
+    "end": "2026-11-26",
+    "label": "2026년 10월 ~ 11월"
+  },
+  "accounts": [
+    {
+      "account_id": "kyk123146",
+      "account_name": "올인원 이엔씨",
+      "blog": {
+        "id": "kyk123146",
+        "name": "올인원 이엔씨",
+        "url": "https://blog.naver.com/kyk123146",
+        "total_posts_all_time": 869
+      },
+      "clip": {
+        "handle": "@allinone_enc",
+        "name": "올인원 이엔씨",
+        "url": "https://clip.naver.com/@allinone_enc?tab=all&filter=all",
+        "total_clips_all_time": 43,
+        "followers": 498,
+        "following": 676
+      }
+    },
+    {
+      "account_id": "kyk123159",
+      "account_name": "CFS KOREA",
+      "blog": {
+        "id": "kyk123159",
+        "name": "CFS KOREA (씨에프에스코리아)",
+        "url": "https://blog.naver.com/kyk123159",
+        "total_posts_all_time": 252
+      },
+      "clip": {
+        "handle": "cfs_korea_",
+        "name": "씨에프에스코리아",
+        "url": "https://clip.naver.com/@cfs_korea_?tab=all&filter=all",
+        "total_clips_all_time": 23,
+        "followers": 488,
+        "following": 468
+      }
+    }
+  ],
+  "account": {
+    "naver_id": "kyk123146",
+    "blog": {
+      "id": "kyk123146",
+      "name": "올인원 이엔씨",
+      "url": "https://blog.naver.com/kyk123146",
+      "total_posts_all_time": 869
+    },
+    "clip": {
+      "handle": "@allinone_enc",
+      "name": "올인원 이엔씨",
+      "url": "https://clip.naver.com/@allinone_enc?tab=all&filter=all",
+      "total_clips_all_time": 43,
+      "followers": 498,
+      "following": 676
+    }
+  },
+  "summary": {
+    "total": {
+      "count": 11,
+      "views": 116,
+      "likes": 26,
+      "comments": 17
+    },
+    "by_account": {
+      "kyk123146": {
+        "count": 8,
+        "views": 79,
+        "likes": 16,
+        "comments": 10
+      },
+      "kyk123159": {
+        "count": 3,
+        "views": 37,
+        "likes": 10,
+        "comments": 7
+      }
+    },
+    "by_month": {
+      "2026-10": {
+        "count": 5,
+        "views": 95,
+        "likes": 16,
+        "comments": 8
+      },
+      "2026-11": {
+        "count": 6,
+        "views": 21,
+        "likes": 10,
+        "comments": 9
+      }
+    }
   },
   "items": [
     {
@@ -115,25 +221,9 @@
       "duration_seconds": 31,
       "collected_at": "2026-11-26T15:30:00+09:00",
       "source": "NAVER Clip · 프로필 그리드(조회수·재생시간) + 클립 피드(좋아요·댓글)",
-      "note": "게시일은 프로필 표기 '3일 전'을 기준일(2026-11-26)로 환산"
-    },
-    {
-      "platform": "clip",
-      "id": "3311F028CFB7938B0FD2DED0B06BBC892E14",
-      "title": "조립하는 바닥이라고 들어봤나?",
-      "content": "조립하는 바닥이라고 들어봤나?",
-      "category": "클립",
-      "published_at": "2026-11-16",
-      "published_at_full": "2026-11-16T00:00:00+09:00",
-      "url": "https://clip.naver.com/contents?recType=CLIP_PC&recId=%7B%22targetProfileId%22%3A%22Oi9sKo1Q9TbRjd_ATexT%22%2C%22open%22%3Atrue%7D&serviceType=CLIP&seedMediaId=3311F028CFB7938B0FD2DED0B06BBC892E14&seedMediaType=SHORT_FORM",
-      "views": 2,
-      "likes": 2,
-      "comments": 2,
-      "duration": "00:43",
-      "duration_seconds": 43,
-      "collected_at": "2026-11-26T15:30:00+09:00",
-      "source": "NAVER Clip · 프로필 그리드(조회수·재생시간) + 클립 피드(좋아요·댓글)",
-      "note": null
+      "note": "게시일은 프로필 표기 '3일 전'을 기준일(2026-11-26)로 환산",
+      "account_id": "kyk123146",
+      "account_name": "올인원 이엔씨"
     },
     {
       "platform": "clip",
@@ -151,7 +241,69 @@
       "duration_seconds": 43,
       "collected_at": "2026-11-26T15:30:00+09:00",
       "source": "NAVER Clip · 프로필 그리드(조회수·재생시간) + 클립 피드(좋아요·댓글)",
-      "note": null
+      "note": null,
+      "account_id": "kyk123146",
+      "account_name": "올인원 이엔씨"
+    },
+    {
+      "platform": "clip",
+      "id": "7671B1D7DB275A701D0B5508C624B1E34B8C",
+      "account_id": "kyk123159",
+      "account_name": "CFS KOREA",
+      "title": "추운 겨울 인건비 걱정 없이 시공 늘리는 방법!",
+      "content": "추운 겨울 인건비 걱정 없이 시공 늘리는 방법!",
+      "category": "클립",
+      "published_at": "2026-11-16",
+      "published_at_full": "2026-11-16T00:00:00+09:00",
+      "url": "https://clip.naver.com/contents?recType=CLIP_PC&recId=%7B%22targetProfileId%22%3A%22VDY4o5nNKgXwfjbV-sH8%22%2C%22open%22%3Atrue%7D&serviceType=CLIP&seedMediaId=7671B1D7DB275A701D0B5508C624B1E34B8C&seedMediaType=SHORT_FORM",
+      "views": 0,
+      "likes": 3,
+      "comments": 3,
+      "duration": "01:10",
+      "duration_seconds": 70,
+      "collected_at": "2026-11-26T16:10:00+09:00",
+      "source": "NAVER Clip · 프로필 그리드(cfs_korea_) 조회수·재생시간 + 클립 피드 좋아요·댓글",
+      "note": "게시일은 프로필 그리드 표기(2026.11.16 / 2026.11.10 / 2026.10.20)"
+    },
+    {
+      "platform": "clip",
+      "id": "3311F028CFB7938B0FD2DED0B06BBC892E14",
+      "title": "조립하는 바닥이라고 들어봤나?",
+      "content": "조립하는 바닥이라고 들어봤나?",
+      "category": "클립",
+      "published_at": "2026-11-16",
+      "published_at_full": "2026-11-16T00:00:00+09:00",
+      "url": "https://clip.naver.com/contents?recType=CLIP_PC&recId=%7B%22targetProfileId%22%3A%22Oi9sKo1Q9TbRjd_ATexT%22%2C%22open%22%3Atrue%7D&serviceType=CLIP&seedMediaId=3311F028CFB7938B0FD2DED0B06BBC892E14&seedMediaType=SHORT_FORM",
+      "views": 2,
+      "likes": 2,
+      "comments": 2,
+      "duration": "00:43",
+      "duration_seconds": 43,
+      "collected_at": "2026-11-26T15:30:00+09:00",
+      "source": "NAVER Clip · 프로필 그리드(조회수·재생시간) + 클립 피드(좋아요·댓글)",
+      "note": null,
+      "account_id": "kyk123146",
+      "account_name": "올인원 이엔씨"
+    },
+    {
+      "platform": "clip",
+      "id": "BB2360389928F39198B65D241B37B14007B5",
+      "account_id": "kyk123159",
+      "account_name": "CFS KOREA",
+      "title": "500평 연마, 일반 연마기로 17일? 장비별 일수 계산해 봤습니다",
+      "content": "500평 연마, 일반 연마기로 17일? 장비별 일수 계산해 봤습니다 지하주차장, 물류센터처럼 끝이 안 보이는 대형 현장. 장비는 감이 아니라 '하루 작업량'으로 계산해 보세요. 500평 현장, 장비별 소요일 계산 - 일반 연마기 (하루 30평) 약 17일 - CFS-KN86 (하루 약 45평) 약 11일 - CFS-K920 (하루 100평) 5일 - CFS-1000 (하루 150평) 약 3.3일 ※ 하루 작업량은 계산을 위한 가정값 기준 산술 예시입니다. ※ 콘크리트 강도, 단차, 바닥 상태 등 현장 조건에 따라 달라집니다. 댓글로 '현장 평수'와 전원만 남겨 주세요. 현장에 맞는 장비와 구매·렌탈 가능 여부를 안내해 드리겠습니다. #연마기 #콘크리트연마 #바닥연마 #대형현장 #물류센터 #지하주차장 #철거 #연마기렌탈 #CFSKOREA",
+      "category": "클립",
+      "published_at": "2026-11-10",
+      "published_at_full": "2026-11-10T00:00:00+09:00",
+      "url": "https://clip.naver.com/contents?recType=CLIP_PC&recId=%7B%22targetProfileId%22%3A%22VDY4o5nNKgXwfjbV-sH8%22%2C%22open%22%3Atrue%7D&serviceType=CLIP&seedMediaId=BB2360389928F39198B65D241B37B14007B5&seedMediaType=SHORT_FORM",
+      "views": 9,
+      "likes": 1,
+      "comments": 1,
+      "duration": "01:20",
+      "duration_seconds": 80,
+      "collected_at": "2026-11-26T16:10:00+09:00",
+      "source": "NAVER Clip · 프로필 그리드(cfs_korea_) 조회수·재생시간 + 클립 피드 좋아요·댓글",
+      "note": "게시일은 프로필 그리드 표기(2026.11.16 / 2026.11.10 / 2026.10.20)"
     },
     {
       "platform": "clip",
@@ -169,7 +321,9 @@
       "duration_seconds": 55,
       "collected_at": "2026-11-26T15:30:00+09:00",
       "source": "NAVER Clip · 프로필 그리드(조회수·재생시간) + 클립 피드(좋아요·댓글)",
-      "note": null
+      "note": null,
+      "account_id": "kyk123146",
+      "account_name": "올인원 이엔씨"
     },
     {
       "platform": "clip",
@@ -187,7 +341,9 @@
       "duration_seconds": 36,
       "collected_at": "2026-11-26T15:30:00+09:00",
       "source": "NAVER Clip · 프로필 그리드(조회수·재생시간) + 클립 피드(좋아요·댓글)",
-      "note": null
+      "note": null,
+      "account_id": "kyk123146",
+      "account_name": "올인원 이엔씨"
     },
     {
       "platform": "clip",
@@ -205,7 +361,29 @@
       "duration_seconds": 37,
       "collected_at": "2026-11-26T15:30:00+09:00",
       "source": "NAVER Clip · 프로필 그리드(조회수·재생시간) + 클립 피드(좋아요·댓글)",
-      "note": null
+      "note": null,
+      "account_id": "kyk123146",
+      "account_name": "올인원 이엔씨"
+    },
+    {
+      "platform": "clip",
+      "id": "0E9E06F94367291469E3FD565A95B0ABAD55",
+      "account_id": "kyk123159",
+      "account_name": "CFS KOREA",
+      "title": "기계값보다 무서운 건 매일 빠져나가는 현장 인건비입니다.",
+      "content": "기계값보다 무서운 건 매일 빠져나가는 현장 인건비입니다. 장비 파는 입장에서 솔직히 계산해 드립니다. ▪ 인부 3명 × 3일 이상 걸리던 현장을 ▪ 탑승형·리모컨 연마장비로 혼자서 반나절 만에 ▪ 우레탄·에폭시 제거부터 면갈이·폴리싱까지 한 대로 ▪ 집진기 연동으로 분진 청소 시간까지 절약 거래처 보호를 위해 단가표는 배포하지 않습니다. 주로 하시는 작업과 평수를 DM으로 남겨주시면 담당자가 현장 맞춤 기종과 견적을 안내해 드립니다. 렌탈·구입 문의 1666-1413",
+      "category": "클립",
+      "published_at": "2026-10-20",
+      "published_at_full": "2026-10-20T00:00:00+09:00",
+      "url": "https://clip.naver.com/contents?recType=CLIP_PC&recId=%7B%22targetProfileId%22%3A%22VDY4o5nNKgXwfjbV-sH8%22%2C%22open%22%3Atrue%7D&serviceType=CLIP&seedMediaId=0E9E06F94367291469E3FD565A95B0ABAD55&seedMediaType=SHORT_FORM",
+      "views": 28,
+      "likes": 6,
+      "comments": 3,
+      "duration": "00:39",
+      "duration_seconds": 39,
+      "collected_at": "2026-11-26T16:10:00+09:00",
+      "source": "NAVER Clip · 프로필 그리드(cfs_korea_) 조회수·재생시간 + 클립 피드 좋아요·댓글",
+      "note": "게시일은 프로필 그리드 표기(2026.11.16 / 2026.11.10 / 2026.10.20)"
     },
     {
       "platform": "clip",
@@ -223,7 +401,9 @@
       "duration_seconds": 34,
       "collected_at": "2026-11-26T15:30:00+09:00",
       "source": "NAVER Clip · 프로필 그리드(조회수·재생시간) + 클립 피드(좋아요·댓글)",
-      "note": null
+      "note": null,
+      "account_id": "kyk123146",
+      "account_name": "올인원 이엔씨"
     },
     {
       "platform": "clip",
@@ -241,7 +421,9 @@
       "duration_seconds": 6,
       "collected_at": "2026-11-26T15:30:00+09:00",
       "source": "NAVER Clip · 프로필 그리드(조회수·재생시간) + 클립 피드(좋아요·댓글)",
-      "note": null
+      "note": null,
+      "account_id": "kyk123146",
+      "account_name": "올인원 이엔씨"
     }
   ]
 }
