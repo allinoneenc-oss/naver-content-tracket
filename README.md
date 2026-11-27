@@ -17,11 +17,13 @@
 ```
 naver-content-tracker/
 ├── index.html          # 대시보드 (data/contents.json 을 fetch 해서 렌더링)
+├── strategy.html       # 브랜드 전략·경쟁사·업계 인텔리전스 (data/intelligence.json + contents.json)
 ├── data/
 │   ├── contents.json   # 전체 데이터 (메타 + 요약 + items, 두 계정 통합)
 │   ├── blog.json       # 블로그만 (두 계정)
 │   ├── clips.json      # 클립만 (두 계정)
-│   └── contents.csv    # 엑셀/구글시트용 CSV (UTF-8 BOM)
+│   ├── contents.csv    # 엑셀/구글시트용 CSV (UTF-8 BOM)
+│   └── intelligence.json # 전략 페이지 데이터 (액션·키워드·경쟁사·트렌드·사이트 진단)
 └── README.md
 ```
 
@@ -36,8 +38,18 @@ GitHub Pages 기준:
 | 전체 CSV | `https://allinoneenc-oss.github.io/naver-content-tracket/data/contents.csv` |
 | 블로그 JSON | `https://allinoneenc-oss.github.io/naver-content-tracket/data/blog.json` |
 | 클립 JSON | `https://allinoneenc-oss.github.io/naver-content-tracket/data/clips.json` |
+| 전략 페이지 | `https://allinoneenc-oss.github.io/naver-content-tracket/strategy.html` |
 
 Claude 등에 붙여넣을 때는 `data/contents.json` 주소 하나면 됩니다(요약 통계까지 들어 있음).
+
+## 전략 페이지 (`strategy.html`)
+
+같은 저장소의 별도 페이지로, 상단 내비게이션(`📊 콘텐츠 트래커` ↔ `🧭 브랜드 전략·시장 분석`)으로 오갑니다.
+
+- 데이터는 전부 `data/intelligence.json`에서 옵니다: `actions`(실행 항목 20개), `keywords`(10개, `match` 배열로 contents.json과 대조), `competitors.items`(13곳), `trends`(10건), `site_audit`, `channel_plan`, `glossary`.
+- 키워드별 '10~11월 콘텐츠' 건수와 KPI는 `data/contents.json`을 실시간으로 읽어 계산합니다(키워드 추가 시 `match` 동의어만 채우면 됨).
+- 액션 체크 상태는 브라우저 `localStorage` 키 `strategy-actions-v1`에 저장됩니다(사람별·기기별).
+- 내용을 고칠 때는 `intelligence.json`만 수정하면 페이지 코드는 건드릴 필요가 없습니다. `meta.updated_at`도 함께 갱신하세요.
 
 ## 데이터 스키마 (schema_version 2.0)
 
