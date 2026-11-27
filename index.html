@@ -33,6 +33,12 @@
     font-size:15px;
   }
   .wrap{max-width:1200px;margin:0 auto;padding:0 20px 64px}
+  .sitenav{background:#0f3d3a;color:#fff;position:sticky;top:0;z-index:50;box-shadow:0 1px 0 rgba(255,255,255,.06)}
+  .sitenav .wrap{padding:0 20px;display:flex;align-items:center;gap:6px;height:52px}
+  .sitenav .brandmark{font-size:13px;font-weight:700;letter-spacing:.04em;opacity:.75;margin-right:10px;white-space:nowrap}
+  .sitenav a{color:#cfe6e1;text-decoration:none;font-size:13.5px;font-weight:600;padding:7px 12px;border-radius:999px;white-space:nowrap;display:inline-flex;align-items:center;gap:6px}
+  .sitenav a:hover{background:rgba(255,255,255,.1);color:#fff}
+  .sitenav a.active{background:#fff;color:#0f3d3a}
   header.top{
     background:linear-gradient(135deg,#0f3d3a 0%, #0f766e 55%, #157f74 100%);
     color:#fff;
@@ -154,6 +160,7 @@
     h1{font-size:22px}
   }
   @media (max-width:560px){
+    .sitenav .brandmark{display:none}
     .wrap{padding:0 14px 48px}
     .panel{padding:18px 16px}
     .kpi .value{font-size:23px}
@@ -161,6 +168,13 @@
 </style>
 </head>
 <body>
+<nav class="sitenav">
+  <div class="wrap">
+    <span class="brandmark">ALL IN ONE E&amp;C · CFS KOREA</span>
+    <a href="./index.html" class="active">📊 콘텐츠 트래커</a>
+    <a href="./strategy.html">🧭 브랜드 전략·시장 분석</a>
+  </div>
+</nav>
 <header class="top">
   <div class="wrap">
     <div class="eyebrow">ALL IN ONE E&amp;C · CFS KOREA · CONTENT REPORT</div>

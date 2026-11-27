@@ -1,0 +1,650 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>브랜드 전략 · 경쟁사 분석 · 콘크리트 업계 인텔리전스 | 올인원 E&C · CFS KOREA</title>
+<meta name="description" content="올인원 E&C · CFS KOREA의 즉시 실행 액션 플랜, 키워드 기회 매트릭스, 경쟁사 분석, 2025~2026 콘크리트 업계 이슈, 홈페이지 개선 진단" />
+<style>
+  :root{
+    --bg:#f4f6f8;
+    --card:#ffffff;
+    --ink:#111827;
+    --ink-2:#4b5563;
+    --ink-3:#8b95a1;
+    --line:#e5e8ec;
+    --brand:#0f766e;
+    --brand-deep:#0f3d3a;
+    --brand-soft:#e6f4f1;
+    --blog:#2563eb;
+    --blog-soft:#e8efff;
+    --clip:#c2410c;
+    --clip-soft:#fdeee6;
+    --warn:#b45309;
+    --warn-soft:#fef3c7;
+    --danger:#b91c1c;
+    --danger-soft:#fee2e2;
+    --ok:#047857;
+    --ok-soft:#d1fae5;
+    --radius:16px;
+    --shadow:0 1px 2px rgba(16,24,40,.04), 0 8px 24px rgba(16,24,40,.06);
+  }
+  *{box-sizing:border-box}
+  html,body{margin:0;padding:0}
+  body{
+    background:var(--bg);color:var(--ink);
+    font-family:-apple-system,BlinkMacSystemFont,"Apple SD Gothic Neo","Pretendard","Malgun Gothic","Noto Sans KR",Roboto,sans-serif;
+    -webkit-font-smoothing:antialiased;line-height:1.55;font-size:15px;
+  }
+  a{color:var(--brand)}
+  .wrap{max-width:1200px;margin:0 auto;padding:0 20px 72px}
+
+  /* ── 사이트 상단 이동 바 (index.html과 동일) ── */
+  .sitenav{background:var(--brand-deep);color:#fff;position:sticky;top:0;z-index:50;box-shadow:0 1px 0 rgba(255,255,255,.06)}
+  .sitenav .wrap{padding:0 20px;display:flex;align-items:center;gap:6px;height:52px;max-width:1200px}
+  .sitenav .brandmark{font-size:13px;font-weight:700;letter-spacing:.04em;opacity:.75;margin-right:10px;white-space:nowrap}
+  .sitenav a{
+    color:#cfe6e1;text-decoration:none;font-size:13.5px;font-weight:600;
+    padding:7px 12px;border-radius:999px;white-space:nowrap;display:inline-flex;align-items:center;gap:6px
+  }
+  .sitenav a:hover{background:rgba(255,255,255,.1);color:#fff}
+  .sitenav a.active{background:#fff;color:var(--brand-deep)}
+
+  header.top{background:linear-gradient(135deg,#0f3d3a 0%, #0f766e 55%, #157f74 100%);color:#fff;padding:30px 0 70px;margin-bottom:-42px}
+  header.top .wrap{padding-bottom:0}
+  .eyebrow{font-size:12.5px;letter-spacing:.08em;text-transform:uppercase;opacity:.82;font-weight:600}
+  h1{margin:8px 0 6px;font-size:26px;line-height:1.32;letter-spacing:-.02em;font-weight:700}
+  .sub{opacity:.92;font-size:13.5px;max-width:760px}
+  .sub .dot{margin:0 7px;opacity:.5}
+  .sub strong{font-weight:600}
+
+  .kpis{display:grid;grid-template-columns:repeat(4,1fr);gap:14px;position:relative}
+  .kpi{background:var(--card);border-radius:var(--radius);padding:16px 18px;box-shadow:var(--shadow);border:1px solid rgba(255,255,255,.6)}
+  .kpi .label{font-size:12.5px;color:var(--ink-3);font-weight:600}
+  .kpi .value{font-size:26px;font-weight:700;letter-spacing:-.03em;margin-top:5px;font-variant-numeric:tabular-nums}
+  .kpi .value small{font-size:13px;font-weight:600;color:var(--ink-3);margin-left:3px}
+  .kpi .foot{margin-top:6px;font-size:12px;color:var(--ink-2)}
+  .up{color:var(--ok);font-weight:700}
+  .down{color:var(--danger);font-weight:700}
+
+  .tabs{display:flex;gap:6px;flex-wrap:wrap;background:#fff;border:1px solid var(--line);border-radius:999px;padding:5px;box-shadow:var(--shadow);margin:22px 0 0}
+  .tab{border:0;background:transparent;font:inherit;font-size:13.5px;font-weight:600;color:var(--ink-2);padding:9px 15px;border-radius:999px;cursor:pointer;white-space:nowrap}
+  .tab:hover{color:var(--ink);background:#f4f6f8}
+  .tab.active{background:var(--brand);color:#fff}
+
+  .panel{background:var(--card);border:1px solid var(--line);border-radius:var(--radius);box-shadow:var(--shadow);padding:22px 24px;margin-top:18px}
+  .panel h2{margin:0 0 4px;font-size:16.5px;letter-spacing:-.01em}
+  .panel h3{margin:22px 0 10px;font-size:14.5px;letter-spacing:-.01em}
+  .panel .hint{color:var(--ink-3);font-size:13px;margin:0 0 16px}
+  .section-head{display:flex;justify-content:space-between;align-items:flex-end;gap:16px;flex-wrap:wrap;margin-bottom:10px}
+  .muted{color:var(--ink-3);font-size:12.5px}
+
+  .toolbar{display:flex;gap:14px;flex-wrap:wrap;align-items:center;justify-content:space-between}
+  .groups{display:flex;gap:16px;flex-wrap:wrap;align-items:center}
+  .group{display:flex;align-items:center;gap:7px}
+  .group .glabel{font-size:12px;color:var(--ink-3);font-weight:600}
+  .chips{display:flex;gap:5px;background:#f1f3f6;padding:3px;border-radius:999px;flex-wrap:wrap}
+  .chip{border:0;background:transparent;padding:6px 12px;border-radius:999px;font:inherit;font-size:12.5px;font-weight:600;color:var(--ink-2);cursor:pointer;white-space:nowrap}
+  .chip:hover{color:var(--ink)}
+  .chip.active{background:#fff;color:var(--brand);box-shadow:0 1px 2px rgba(16,24,40,.12)}
+  .chip .n{font-variant-numeric:tabular-nums;opacity:.55;margin-left:4px;font-weight:700}
+
+  .progress{display:flex;align-items:center;gap:12px;margin:4px 0 18px}
+  .pbar{flex:1;height:8px;background:#eef1f4;border-radius:4px;overflow:hidden}
+  .pbar span{display:block;height:100%;background:linear-gradient(90deg,#0f766e,#10b981);border-radius:4px;transition:width .3s}
+  .pnum{font-size:12.5px;font-weight:700;color:var(--ink-2);white-space:nowrap;font-variant-numeric:tabular-nums}
+
+  /* 액션 카드 */
+  .actions{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+  .action{border:1px solid var(--line);border-radius:14px;padding:16px 18px;background:#fff;position:relative;transition:border-color .15s, background .15s}
+  .action:hover{border-color:#cfd8d5}
+  .action.done{background:#f7faf9;border-color:#cfe7e1}
+  .action.done .a-title{text-decoration:line-through;color:var(--ink-3)}
+  .action .a-top{display:flex;gap:8px;align-items:center;flex-wrap:wrap;margin-bottom:8px}
+  .action .a-title{font-size:14.5px;font-weight:700;letter-spacing:-.01em;margin:2px 0 6px;padding-right:26px}
+  .action .a-why{font-size:13px;color:var(--ink-2);margin:0 0 10px}
+  .action ul{margin:0 0 10px;padding-left:17px;font-size:12.8px;color:var(--ink-2)}
+  .action ul li{margin:3px 0}
+  .action .a-foot{display:flex;gap:14px;flex-wrap:wrap;align-items:center;font-size:12px;color:var(--ink-3);border-top:1px dashed var(--line);padding-top:9px}
+  .action .a-foot strong{color:var(--ink-2);font-weight:700}
+  .check{position:absolute;right:14px;top:14px;width:20px;height:20px;accent-color:var(--brand);cursor:pointer}
+  .ev{display:flex;gap:10px;flex-wrap:wrap;margin-top:8px}
+  .ev a{font-size:11.5px;font-weight:600;text-decoration:none;color:var(--brand);background:var(--brand-soft);padding:3px 8px;border-radius:6px}
+  .ev a:hover{background:#d5ece7}
+
+  .tag{display:inline-flex;align-items:center;gap:4px;padding:2px 8px;border-radius:999px;font-size:11.5px;font-weight:700;white-space:nowrap}
+  .tag.now{background:#fee2e2;color:#b91c1c}
+  .tag.winter{background:#e0eaff;color:#1d4ed8}
+  .tag.quarter{background:#ede9fe;color:#6d28d9}
+  .tag.owner{background:#eef1f6;color:#374151}
+  .tag.owner.cfs{background:var(--clip-soft);color:var(--clip)}
+  .tag.owner.all{background:var(--brand-soft);color:var(--brand)}
+  .tag.pri{background:#111827;color:#fff}
+  .tag.pri.A{background:#e5e7eb;color:#374151}
+  .tag.ho{background:#fff7ed;color:#9a3412}
+  .tag.hm{background:#fff7ed;color:#9a3412}
+  .tag.hl{background:#f1f5f9;color:#475569}
+
+  /* 키워드 표 */
+  .tablewrap{overflow-x:auto;margin:0 -6px}
+  table{border-collapse:collapse;width:100%;font-size:13.5px}
+  thead th{text-align:left;font-size:12px;color:var(--ink-3);font-weight:700;letter-spacing:.02em;padding:10px 10px;border-bottom:1px solid var(--line);white-space:nowrap;background:#fbfcfd}
+  tbody td{padding:12px 10px;border-bottom:1px solid #f0f2f5;vertical-align:top}
+  tbody tr:hover{background:#fafbfc}
+  .kw-table{min-width:980px}
+  .kw-table td.k{font-weight:700;white-space:nowrap}
+  .cover{display:flex;align-items:center;gap:8px}
+  .cover .bar{width:64px;height:7px;background:#eef1f4;border-radius:4px;overflow:hidden;flex:0 0 auto}
+  .cover .bar i{display:block;height:100%;background:var(--brand);border-radius:4px}
+  .cover .bar i.zero{background:#e11d48}
+  .cover .num{font-variant-numeric:tabular-nums;font-weight:700;font-size:12.5px;white-space:nowrap}
+  .cover .num.zero{color:#e11d48}
+  .cover .split{font-size:11px;color:var(--ink-3);white-space:nowrap}
+  .topiclist{margin:6px 0 0;padding-left:15px;font-size:12.5px;color:var(--ink-2)}
+  .topiclist li{margin:3px 0}
+  details.matches{margin-top:6px}
+  details.matches summary{font-size:11.5px;color:var(--ink-3);cursor:pointer;font-weight:600}
+  details.matches ul{margin:6px 0 0;padding-left:15px;font-size:11.5px;color:var(--ink-3)}
+
+  /* 경쟁사 */
+  .comps{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+  .comp{border:1px solid var(--line);border-radius:14px;padding:16px 18px;background:#fff}
+  .comp h4{margin:0 0 4px;font-size:14.5px;display:flex;gap:8px;align-items:center;flex-wrap:wrap}
+  .comp .meta{font-size:11.5px;color:var(--ink-3);margin-bottom:10px}
+  .comp .meta a{font-size:11.5px;text-decoration:none;word-break:break-all}
+  .comp p{font-size:12.8px;color:var(--ink-2);margin:0 0 9px}
+  .comp .lab{font-size:11px;font-weight:700;color:var(--ink-3);letter-spacing:.04em;text-transform:uppercase;margin:10px 0 3px}
+  .comp ul{margin:0;padding-left:16px;font-size:12.5px;color:var(--ink-2)}
+  .comp ul li{margin:2px 0}
+  .learn-box{margin-top:10px;background:var(--brand-soft);border-radius:10px;padding:9px 11px;font-size:12.3px;color:#0b5f59}
+  .learn-box b{display:block;font-size:11px;letter-spacing:.04em;color:#0f766e;margin-bottom:2px}
+
+  /* 트렌드 */
+  .trend{border-left:3px solid var(--brand);border-radius:0 12px 12px 0;background:#fbfcfd;padding:14px 18px;margin:0 0 14px;border-top:1px solid var(--line);border-right:1px solid var(--line);border-bottom:1px solid var(--line)}
+  .trend .t-date{font-size:11.5px;font-weight:700;color:var(--brand);letter-spacing:.02em}
+  .trend h4{margin:3px 0 6px;font-size:14.5px}
+  .trend .t-src{font-size:11.8px;color:var(--ink-3);margin-bottom:8px}
+  .trend .t-src a{text-decoration:none}
+  .trend ul.facts{margin:0 0 10px;padding-left:17px;font-size:12.8px;color:var(--ink-2)}
+  .trend ul.facts li{margin:3px 0}
+  .trend .t-two{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+  .trend .t-box{background:#fff;border:1px solid var(--line);border-radius:10px;padding:10px 12px;font-size:12.5px;color:var(--ink-2)}
+  .trend .t-box b{display:block;font-size:11px;letter-spacing:.04em;color:var(--ink-3);margin-bottom:2px}
+
+  /* 진단 */
+  .audit{display:grid;grid-template-columns:1fr 1fr;gap:18px}
+  .audit-col h3{margin:0 0 2px;font-size:15px}
+  .audit-col .site{font-size:12px;color:var(--ink-3);margin-bottom:8px}
+  .audit-col .site a{text-decoration:none}
+  .audit-sum{font-size:12.7px;color:var(--ink-2);background:#f8fafc;border:1px solid var(--line);border-radius:10px;padding:10px 12px;margin-bottom:12px}
+  .finding{border:1px solid var(--line);border-radius:11px;padding:11px 13px;margin-bottom:9px;background:#fff}
+  .finding .f-top{display:flex;gap:7px;align-items:center;flex-wrap:wrap;margin-bottom:5px}
+  .finding .f-area{font-size:11.5px;font-weight:700;color:var(--ink-3)}
+  .finding p{font-size:12.7px;color:var(--ink-2);margin:0 0 6px}
+  .finding .fix{font-size:12.3px;color:#0b5f59;background:var(--brand-soft);border-radius:8px;padding:7px 9px}
+  .finding .fix b{font-size:11px;letter-spacing:.04em;color:#0f766e}
+
+  .ctable{min-width:820px}
+  .ctable td.ch{font-weight:700;white-space:nowrap}
+
+  .glo{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+  .glo div{background:#fbfcfd;border:1px solid var(--line);border-radius:10px;padding:10px 12px;font-size:12.5px;color:var(--ink-2)}
+  .glo b{color:var(--ink);display:block;font-size:12.8px}
+
+  footer{margin-top:26px;color:var(--ink-3);font-size:12.5px}
+  footer ul{margin:8px 0 0;padding-left:18px}
+  footer li{margin:3px 0}
+  .err{background:#fff7ed;border:1px solid #fed7aa;color:#9a3412;padding:14px 16px;border-radius:12px;font-size:13.5px}
+  .empty{padding:30px;text-align:center;color:var(--ink-3);font-size:13.5px}
+  .print-btn{border:1px solid rgba(255,255,255,.4);background:rgba(255,255,255,.12);color:#fff;font:inherit;font-size:12.5px;font-weight:600;padding:7px 12px;border-radius:999px;cursor:pointer}
+  .print-btn:hover{background:rgba(255,255,255,.2)}
+
+  @media (max-width:980px){
+    .actions,.comps,.audit,.glo,.trend .t-two{grid-template-columns:1fr}
+    .kpis{grid-template-columns:repeat(2,1fr)}
+  }
+  @media (max-width:560px){
+    .wrap{padding:0 14px 56px}
+    .panel{padding:18px 15px}
+    h1{font-size:21px}
+    .sitenav .brandmark{display:none}
+    .kpi .value{font-size:22px}
+  }
+  @media print{
+    .sitenav,.tabs,.toolbar,.print-btn{display:none!important}
+    body{background:#fff}
+    .panel,.action,.comp,.trend,.finding{box-shadow:none;break-inside:avoid}
+  }
+</style>
+</head>
+<body>
+
+<nav class="sitenav">
+  <div class="wrap">
+    <span class="brandmark">ALL IN ONE E&amp;C · CFS KOREA</span>
+    <a href="./index.html">📊 콘텐츠 트래커</a>
+    <a href="./strategy.html" class="active">🧭 브랜드 전략·시장 분석</a>
+  </div>
+</nav>
+
+<header class="top">
+  <div class="wrap">
+    <div class="eyebrow">BRAND STRATEGY · COMPETITOR INTELLIGENCE · 2026.11.27</div>
+    <h1>브랜드 전략 · 경쟁사 분석 · 콘크리트 업계 인텔리전스</h1>
+    <div class="sub">
+      올인원 E&amp;C · CFS KOREA <span class="dot">·</span>
+      10~11월 콘텐츠 24건 성과 + 홈페이지 2곳 + 경쟁사 13곳 + 업계 자료 10건을 한 장에 정리했습니다.
+      <span class="dot">·</span> 데이터는 <code>data/intelligence.json</code>에서 고치면 이 페이지에 바로 반영됩니다.
+    </div>
+    <div style="margin-top:14px"><button class="print-btn" id="print-btn">🖨 인쇄 / PDF</button></div>
+  </div>
+</header>
+
+<div class="wrap">
+  <section class="kpis">
+    <div class="kpi">
+      <div class="label">10~11월 콘텐츠</div>
+      <div class="value" id="k-items">–<small>건</small></div>
+      <div class="foot" id="k-items-foot">블로그·클립</div>
+    </div>
+    <div class="kpi">
+      <div class="label">총 조회수</div>
+      <div class="value" id="k-views">–</div>
+      <div class="foot" id="k-views-foot">블로그 / 클립</div>
+    </div>
+    <div class="kpi">
+      <div class="label">즉시 실행 항목</div>
+      <div class="value" id="k-actions">–<small>개</small></div>
+      <div class="foot" id="k-actions-foot">이번 주 / 12월 / 분기</div>
+    </div>
+    <div class="kpi">
+      <div class="label">키워드 빈틈</div>
+      <div class="value" id="k-gap">–<small>개</small></div>
+      <div class="foot" id="k-gap-foot">10개 중 콘텐츠 2건 이하</div>
+    </div>
+  </section>
+
+  <div class="tabs" id="tabs">
+    <button class="tab active" data-tab="actions">① 지금 당장 실행</button>
+    <button class="tab" data-tab="keywords">② 키워드 기회</button>
+    <button class="tab" data-tab="competitors">③ 경쟁사 분석</button>
+    <button class="tab" data-tab="trends">④ 이슈·트렌드·뉴스</button>
+    <button class="tab" data-tab="audit">⑤ 브랜드·사이트 진단</button>
+  </div>
+
+  <main id="main"><div class="panel"><div class="empty">데이터를 불러오는 중입니다…</div></div></main>
+
+  <footer>
+    <div><strong>조사 시점</strong> <span id="updated">–</span> · 자사 콘텐츠 수치는 네이버 수집 데이터(2026-11-26 16:10 기준), 홈페이지·경쟁사 정보는 2026-11-27 라이브 페이지 확인</div>
+    <ul id="notes"></ul>
+  </footer>
+</div>
+
+<script>
+(function(){
+  const LS_KEY = 'strategy-actions-v1';
+  const state = { tab:'actions', urgency:'all', owner:'all', compType:'all', data:null, contents:null, done:{} };
+
+  const esc = s => String(s==null?'':s).replace(/[&<>"']/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
+  const fmt = n => (n==null||isNaN(n)) ? '–' : Number(n).toLocaleString('ko-KR');
+  const $ = id => document.getElementById(id);
+
+  try { state.done = JSON.parse(localStorage.getItem(LS_KEY) || '{}') || {}; } catch(e){ state.done = {}; }
+  const saveDone = () => { try{ localStorage.setItem(LS_KEY, JSON.stringify(state.done)); }catch(e){} };
+
+  const OWNER_CLS = { '올인원 E&C':'all', 'CFS KOREA':'cfs', '공통':'' };
+  const URG_CLS = { '이번 주':'now', '12월 동절기':'winter', '분기':'quarter' };
+  const SEV = { '치명':['tag now','치명'], '중요':['tag hm','중요'], '보통':['tag hl','보통'] };
+
+  /* ── 콘텐츠 데이터에서 키워드 커버리지 계산 ── */
+  function coverageOf(kw){
+    const items = (state.contents && state.contents.items) || [];
+    const terms = (kw.match||[kw.keyword]).map(t=>t.toLowerCase());
+    const hits = items.filter(it=>{
+      const hay = [it.title, it.content, it.category].join(' ').toLowerCase();
+      return terms.some(t=>hay.includes(t));
+    });
+    return {
+      total: hits.length,
+      blog: hits.filter(h=>h.platform==='blog').length,
+      clip: hits.filter(h=>h.platform==='clip').length,
+      items: hits
+    };
+  }
+
+  /* ── ① 액션 플랜 ── */
+  function renderActions(){
+    const all = state.data.actions;
+    const count = (u,o) => all.filter(a=>(u==='all'||a.urgency===u)&&(o==='all'||a.owner===o)).length;
+    const urgChips = ['이번 주','12월 동절기','분기'];
+    const owners = ['올인원 E&C','CFS KOREA','공통'];
+
+    const rows = all.filter(a=> (state.urgency==='all'||a.urgency===state.urgency) && (state.owner==='all'||a.owner===state.owner));
+    const doneN = all.filter(a=>state.done[a.id]).length;
+    const pct = Math.round(doneN/all.length*100);
+
+    let html = `<section class="panel">
+      <div class="section-head">
+        <div>
+          <h2>① 지금 당장 실행할 액션 플랜</h2>
+          <p class="hint" style="margin:0">우선순위 순서입니다. 체크하면 이 브라우저에 저장되어, 같이 보면서 진행 상황을 관리할 수 있습니다.</p>
+        </div>
+        <div class="muted">${doneN} / ${all.length} 완료</div>
+      </div>
+      <div class="progress"><div class="pbar"><span style="width:${pct}%"></span></div><div class="pnum">${pct}%</div></div>
+      <div class="toolbar" style="margin-bottom:16px">
+        <div class="groups">
+          <div class="group">
+            <span class="glabel">긴급도</span>
+            <div class="chips" data-filter="urgency">
+              <button class="chip ${state.urgency==='all'?'active':''}" data-value="all">전체<span class="n">${count('all',state.owner)}</span></button>
+              ${urgChips.map(u=>`<button class="chip ${state.urgency===u?'active':''}" data-value="${esc(u)}">${esc(u)}<span class="n">${count(u,state.owner)}</span></button>`).join('')}
+            </div>
+          </div>
+          <div class="group">
+            <span class="glabel">담당</span>
+            <div class="chips" data-filter="owner">
+              <button class="chip ${state.owner==='all'?'active':''}" data-value="all">전체<span class="n">${count(state.urgency,'all')}</span></button>
+              ${owners.map(o=>`<button class="chip ${state.owner===o?'active':''}" data-value="${esc(o)}">${esc(o)}<span class="n">${count(state.urgency,o)}</span></button>`).join('')}
+            </div>
+          </div>
+        </div>
+        <div class="muted">${rows.length}개 표시</div>
+      </div>`;
+
+    html += `<div class="actions">` + rows.map(a=>{
+      const done = !!state.done[a.id];
+      const ev = (a.evidence||[]).map(e=>{
+        if(e.startsWith('data/')) return `<a href="./${esc(e)}" target="_blank" rel="noopener">${esc(e)}</a>`;
+        let host = e;
+        try{ host = new URL(e).hostname.replace(/^www\./,''); }catch(_){}
+        return `<a href="${esc(e)}" target="_blank" rel="noopener">${esc(host)}</a>`;
+      }).join('');
+      return `<article class="action ${done?'done':''}" data-id="${esc(a.id)}">
+        <input type="checkbox" class="check" data-id="${esc(a.id)}" ${done?'checked':''} aria-label="완료 표시">
+        <div class="a-top">
+          <span class="tag ${URG_CLS[a.urgency]||''}">${esc(a.urgency)}</span>
+          <span class="tag owner ${OWNER_CLS[a.owner]||''}">${esc(a.owner)}</span>
+          <span class="muted" style="font-size:11px">#${esc(a.id)}</span>
+        </div>
+        <div class="a-title">${esc(a.title)}</div>
+        <p class="a-why">${esc(a.why)}</p>
+        <ul>${(a.how||[]).map(h=>`<li>${esc(h)}</li>`).join('')}</ul>
+        <div class="a-foot"><span><strong>기대효과</strong> ${esc(a.impact)}</span><span><strong>난이도</strong> ${esc(a.effort)}</span></div>
+        ${ev?`<div class="ev">${ev}</div>`:''}
+      </article>`;
+    }).join('') + `</div></section>`;
+
+    return html;
+  }
+
+  /* ── ② 키워드 ── */
+  function renderKeywords(){
+    const kws = state.data.keywords.slice().sort((a,b)=> (a.priority===b.priority?0:(a.priority==='S'?-1:1)));
+    const max = 12;
+    let html = `<section class="panel">
+      <div class="section-head">
+        <div>
+          <h2>② 키워드별 콘텐츠·시장 기회 매트릭스</h2>
+          <p class="hint" style="margin:0">'10~11월 콘텐츠' 숫자는 <code>data/contents.json</code> 24건에서 제목·본문·카테고리에 키워드(동의어 포함)가 나온 건수입니다. 회색 막대가 짧을수록 빈틈입니다.</p>
+        </div>
+        <div class="muted">S = 지금 집중 · A = 다음</div>
+      </div>
+      <div class="tablewrap"><table class="kw-table">
+        <thead><tr>
+          <th>키워드</th><th>담당</th><th>10~11월 콘텐츠</th><th>검색 의도 / 검색하는 사람</th><th>빈틈 &amp; 추천 주제</th>
+        </tr></thead><tbody>`;
+    kws.forEach(k=>{
+      const c = coverageOf(k);
+      const zero = c.total===0;
+      const w = Math.min(100, Math.round(c.total/max*100));
+      const matched = c.items.slice(0,6).map(it=>`<li>${esc(it.published_at)} · ${esc(it.platform==='blog'?'블로그':'클립')} · ${esc(it.title)}</li>`).join('');
+      html += `<tr>
+        <td class="k">${esc(k.keyword)}<div style="margin-top:4px"><span class="tag pri ${k.priority==='A'?'A':''}">${esc(k.priority)}</span></div></td>
+        <td><span class="tag owner ${OWNER_CLS[k.owner]||''}">${esc(k.owner)}</span></td>
+        <td>
+          <div class="cover">
+            <div class="bar"><i class="${zero?'zero':''}" style="width:${zero?100:w}%"></i></div>
+            <span class="num ${zero?'zero':''}">${c.total}건</span>
+            <span class="split">블로그 ${c.blog} / 클립 ${c.clip}</span>
+          </div>
+          ${matched?`<details class="matches"><summary>언급된 콘텐츠 보기</summary><ul>${matched}</ul></details>`:`<div class="muted" style="font-size:11.5px;margin-top:4px">언급 0건 — 완전 미개척</div>`}
+        </td>
+        <td><div style="font-size:12.6px;color:var(--ink-2)">${esc(k.intent)}</div><div class="muted" style="margin-top:4px">${esc(k.searcher)}</div></td>
+        <td>
+          <div style="font-size:12.5px;color:var(--ink-2)">${esc(k.gap)}</div>
+          <ul class="topiclist">${(k.topics||[]).map(t=>`<li>${esc(t)}</li>`).join('')}</ul>
+        </td>
+      </tr>`;
+    });
+    html += `</tbody></table></div></section>`;
+
+    html += `<section class="panel">
+      <h2>왜 이 10개인가</h2>
+      <p class="hint">10~11월 성과 상위 3건이 전부 '겨울·동해·테라조'였고, 반응(공감·댓글) 상위는 '비교·선택' 글이었습니다. 그래서 (1) 계절 이슈(동해·한중콘크리트), (2) 비교·선택(약품·패드·공법), (3) 규제 검색(집진기·분진)에 무게를 뒀습니다.</p>
+      <div class="glo">
+        <div><b>이미 이기는 축</b>콘크리트 폴리싱(10건) · 테라조 바닥(6건) · 바닥시공약품(7건) — 여기서는 '비교표·단가·검수'로 깊이를 더합니다.</div>
+        <div><b>비어 있는 축</b>광택기(0건) · 연마패드(1건) · 집진기(2건, 곁다리) · 철거(2건, 곁다리) — 검색 수요는 있는데 우리 글이 없습니다.</div>
+      </div>
+    </section>`;
+
+    return html;
+  }
+
+  /* ── ③ 경쟁사 ── */
+  function renderCompetitors(){
+    const all = state.data.competitors.items;
+    const types = Array.from(new Set(all.map(c=>c.type)));
+    const rows = all.filter(c=> state.compType==='all' || c.type===state.compType);
+    const THREAT = {'높음':['tag now','위협 높음'],'중간':['tag hm','위협 중간'],'중간~높음(물류센터)':['tag hm','위협 중간~높음']};
+
+    let html = `<section class="panel">
+      <div class="section-head">
+        <div>
+          <h2>③ 경쟁사 분석 &amp; 포트폴리오 벤치마킹</h2>
+          <p class="hint" style="margin:0">2026-11-27에 실제 페이지를 열어 확인한 내용만 담았습니다. 가격·실적은 공개된 값이며, 변동될 수 있습니다.</p>
+        </div>
+      </div>
+      <div class="audit-sum">${esc(state.data.competitors.summary)}</div>
+      <div class="toolbar" style="margin-bottom:14px">
+        <div class="groups"><div class="group"><span class="glabel">분야</span>
+          <div class="chips" data-filter="compType">
+            <button class="chip ${state.compType==='all'?'active':''}" data-value="all">전체<span class="n">${all.length}</span></button>
+            ${types.map(t=>`<button class="chip ${state.compType===t?'active':''}" data-value="${esc(t)}">${esc(t)}<span class="n">${all.filter(c=>c.type===t).length}</span></button>`).join('')}
+          </div>
+        </div></div>
+        <div class="muted">${rows.length}곳</div>
+      </div>
+      <div class="comps">`;
+    rows.forEach(c=>{
+      const th = THREAT[c.threat] || ['tag hl', c.threat||''];
+      html += `<article class="comp">
+        <h4>${esc(c.name)} <span class="${th[0]}">${esc(th[1])}</span></h4>
+        <div class="meta">${esc(c.type)} · ${esc(c.area)} · <a href="${esc(c.url)}" target="_blank" rel="noopener">${esc(c.url.replace(/^https?:\/\//,'').slice(0,52))}</a></div>
+        <p>${esc(c.what)}</p>
+        <div class="lab">강점</div>
+        <ul>${c.strengths.map(s=>`<li>${esc(s)}</li>`).join('')}</ul>
+        <div class="lab">콘텐츠 방식</div>
+        <p style="margin:0">${esc(c.content_style)}</p>
+        <div class="lab">약점 · 빈틈</div>
+        <p style="margin:0">${esc(c.weakness)}</p>
+        <div class="learn-box"><b>우리가 가져올 것</b>${esc(c.learn)}</div>
+      </article>`;
+    });
+    html += `</div></section>`;
+
+    html += `<section class="panel">
+      <h2>한 줄 결론: 무엇으로 이길 것인가</h2>
+      <p class="hint">경쟁사는 각자 한 축만 강합니다. 시공사는 장비·약품이 없고, 장비사는 시공이 없고, 자재사는 현장 대응이 없습니다.</p>
+      <div class="glo">
+        <div><b>무기 1 — 시공 + 장비 + 약품 수직계열화</b>올인원 E&amp;C(시공)와 CFS KOREA(장비·패드·약품)를 한 회사가 운영합니다. 이 조합을 사이트·콘텐츠에서 명시적으로 설명하는 경쟁사가 없습니다. '시공하면서 검증한 장비·약품'이라는 문장이 가장 강한 무기입니다.</div>
+        <div><b>무기 2 — 실적 3천 건 + 4개 지점</b>수도권(성남·안성)과 영남(부산·진해)을 동시에 커버합니다. 미러스톤·탑폴리싱·에코그린은 수도권 중심, 시드스톤은 대전입니다.</div>
+        <div><b>무기 3 — 규제·안전 대응력</b>분진(결정형 유리규산)·동절기 양생 기준을 콘텐츠로 설명할 수 있는 시공사가 드뭅니다. 발주처가 안전 서류를 요구하는 시대에 이 이야기가 견적을 이깁니다.</div>
+        <div><b>보완 — 가격·검수 기준</b>경쟁사는 '무료 실사', '최저가 보장', '렌탈 1일 49.5만원'처럼 숫자를 먼저 냅니다. 우리는 3천 건 실적에 비해 숫자가 없어 상담 전에 비교 대상에서 빠질 위험이 있습니다.</div>
+      </div>
+    </section>`;
+    return html;
+  }
+
+  /* ── ④ 트렌드 ── */
+  function renderTrends(){
+    const ts = state.data.trends;
+    let html = `<section class="panel">
+      <div class="section-head">
+        <div>
+          <h2>④ 최근 시공 이슈 · 트렌드 · 뉴스 (2025~2026)</h2>
+          <p class="hint" style="margin:0">확인된 출처가 있는 것만 담았습니다. 각 항목의 '그래서 우리는'이 실행 항목과 연결됩니다.</p>
+        </div>
+        <div class="muted">${ts.length}건</div>
+      </div>`;
+    ts.forEach(t=>{
+      html += `<article class="trend">
+        <div class="t-date">${esc(t.date)}</div>
+        <h4>${esc(t.title)}</h4>
+        <div class="t-src">출처: ${esc(t.source)} · <a href="${esc(t.url)}" target="_blank" rel="noopener">원문 보기 ↗</a></div>
+        <ul class="facts">${t.facts.map(f=>`<li>${esc(f)}</li>`).join('')}</ul>
+        <div class="t-two">
+          <div class="t-box"><b>시장에 미치는 영향</b>${esc(t.implication)}</div>
+          <div class="t-box"><b>콘텐츠로 바꾸는 법</b>${esc(t.angle)}</div>
+        </div>
+      </article>`;
+    });
+    html += `</section>`;
+    return html;
+  }
+
+  /* ── ⑤ 진단 ── */
+  function renderAudit(){
+    const A = state.data.site_audit;
+    const col = (k)=>{
+      const b = A[k];
+      const findings = b.findings.slice().sort((x,y)=>['치명','중요','보통'].indexOf(x.severity)-['치명','중요','보통'].indexOf(y.severity));
+      return `<div class="audit-col">
+        <h3>${esc(b.label)}</h3>
+        <div class="site"><a href="${k==='allinone'?'https://allinone-enc.com/':'https://www.cfskorea.co.kr/'}" target="_blank" rel="noopener">${k==='allinone'?'https://allinone-enc.com/':'https://www.cfskorea.co.kr/'}</a></div>
+        <div class="audit-sum">${esc(b.summary)}</div>
+        ${findings.map(f=>{
+          const s = SEV[f.severity]||['tag hl', f.severity];
+          return `<div class="finding">
+            <div class="f-top"><span class="${s[0]}">${esc(s[1])}</span><span class="f-area">${esc(f.area)}</span></div>
+            <p>${esc(f.finding)}</p>
+            <div class="fix"><b>고치는 법</b> ${esc(f.fix)}</div>
+          </div>`;
+        }).join('')}
+      </div>`;
+    };
+
+    let html = `<section class="panel">
+      <div class="section-head">
+        <div>
+          <h2>⑤ 자사 홈페이지 · 브랜드 개선 진단</h2>
+          <p class="hint" style="margin:0">라이브 페이지에서 직접 확인한 사실만 적었습니다. 위에서부터 고치면 효과가 큰 순서(치명 → 중요 → 보통)입니다.</p>
+        </div>
+      </div>
+      <div class="audit">${col('allinone')}${col('cfs')}</div>
+    </section>`;
+
+    html += `<section class="panel">
+      <h2>채널 운영안 — 어디에 무엇을 올릴까</h2>
+      <p class="hint">10~11월 데이터를 보면 블로그가 조회의 88%를 만들고, 클립은 조회보다 '신뢰 보조' 역할입니다. 채널마다 역할을 나눠 같은 소재를 재활용하는 쪽이 현실적입니다.</p>
+      <div class="tablewrap"><table class="ctable">
+        <thead><tr><th>채널</th><th>역할</th><th>지금 상태</th><th>할 일</th><th>볼 지표</th></tr></thead>
+        <tbody>${state.data.channel_plan.map(c=>`<tr>
+          <td class="ch">${esc(c.channel)}</td>
+          <td>${esc(c.role)}</td>
+          <td style="font-size:12.3px;color:var(--ink-2)">${esc(c.now)}</td>
+          <td><ul class="topiclist" style="margin:0">${c.do.map(d=>`<li>${esc(d)}</li>`).join('')}</ul></td>
+          <td style="font-size:12.3px;color:var(--ink-2)">${esc(c.kpi)}</td>
+        </tr>`).join('')}</tbody>
+      </table></div>
+    </section>`;
+
+    html += `<section class="panel">
+      <h2>용어 한 줄 정리</h2>
+      <p class="hint">대화할 때 이 단어들이 나오면 같은 뜻으로 쓰고 있는지 확인하세요.</p>
+      <div class="glo">${state.data.glossary.map(g=>`<div><b>${esc(g.term)}</b>${esc(g.desc)}</div>`).join('')}</div>
+    </section>`;
+
+    return html;
+  }
+
+  /* ── 렌더 ── */
+  function render(){
+    const map = { actions: renderActions, keywords: renderKeywords, competitors: renderCompetitors, trends: renderTrends, audit: renderAudit };
+    $('main').innerHTML = map[state.tab]();
+    document.querySelectorAll('#tabs .tab').forEach(b=>b.classList.toggle('active', b.dataset.tab===state.tab));
+    bindFilters();
+    bindChecks();
+  }
+
+  function bindFilters(){
+    document.querySelectorAll('[data-filter]').forEach(box=>{
+      const key = box.dataset.filter;
+      box.querySelectorAll('.chip').forEach(btn=>{
+        btn.addEventListener('click', ()=>{ state[key] = btn.dataset.value; render(); });
+      });
+    });
+  }
+
+  function bindChecks(){
+    document.querySelectorAll('.check').forEach(cb=>{
+      cb.addEventListener('change', ()=>{
+        const id = cb.dataset.id;
+        if(cb.checked) state.done[id] = true; else delete state.done[id];
+        saveDone();
+        render();
+      });
+    });
+    const pb = $('print-btn');
+    if(pb && !pb.dataset.bound){ pb.dataset.bound='1'; pb.addEventListener('click', ()=>window.print()); }
+  }
+
+  document.querySelectorAll('#tabs .tab').forEach(btn=>{
+    btn.addEventListener('click', ()=>{
+      state.tab = btn.dataset.tab;
+      if(location.hash !== '#'+state.tab) history.replaceState(null,'', '#'+state.tab);
+      window.scrollTo({top: document.querySelector('.tabs').offsetTop - 60, behavior:'smooth'});
+      render();
+    });
+  });
+
+  const initial = (location.hash||'').replace('#','');
+  if(['actions','keywords','competitors','trends','audit'].includes(initial)) state.tab = initial;
+
+  /* ── 데이터 로드 ── */
+  Promise.all([
+    fetch('data/intelligence.json',{cache:'no-store'}).then(r=>{ if(!r.ok) throw new Error('intelligence.json HTTP '+r.status); return r.json(); }),
+    fetch('data/contents.json',{cache:'no-store'}).then(r=>{ if(!r.ok) throw new Error('contents.json HTTP '+r.status); return r.json(); }).catch(()=>null)
+  ]).then(([intel, contents])=>{
+    state.data = intel; state.contents = contents;
+
+    if(contents && contents.summary){
+      const s = contents.summary;
+      $('k-items').innerHTML = fmt(s.total.count)+'<small>건</small>';
+      $('k-items-foot').textContent = `블로그 ${s.by_platform.blog.count} · 클립 ${s.by_platform.clip.count}`;
+      $('k-views').textContent = fmt(s.total.views);
+      $('k-views-foot').textContent = `블로그 ${fmt(s.by_platform.blog.views)} · 클립 ${fmt(s.by_platform.clip.views)}`;
+    }
+    const acts = intel.actions;
+    $('k-actions').innerHTML = acts.length+'<small>개</small>';
+    const cnt = u => acts.filter(a=>a.urgency===u).length;
+    $('k-actions-foot').textContent = `이번 주 ${cnt('이번 주')} · 12월 ${cnt('12월 동절기')} · 분기 ${cnt('분기')}`;
+
+    // 빈틈: 커버리지 2건 이하
+    let gaps = 0;
+    intel.keywords.forEach(k=>{ if(coverageOf(k).total<=2) gaps++; });
+    $('k-gap').innerHTML = gaps+'<small>개</small>';
+
+    $('updated').textContent = (intel.meta.updated_at||'').replace('T',' ').slice(0,16);
+    $('notes').innerHTML = (intel.meta.basis||[]).map(n=>`<li>${esc(n)}</li>`).join('')
+      + `<li>${esc(intel.meta.disclaimer||'')}</li>`;
+
+    render();
+  }).catch(err=>{
+    $('main').innerHTML = `<div class="panel"><div class="err">데이터를 불러오지 못했습니다 (${esc(err.message)}).<br>
+      <code>data/intelligence.json</code> 경로를 확인하세요. 로컬 파일을 직접 열었다면 간단한 웹 서버가 필요합니다. 예: <code>python3 -m http.server</code></div></div>`;
+  });
+})();
+</script>
+</body>
+</html>
